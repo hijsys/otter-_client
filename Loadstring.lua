@@ -3,26 +3,26 @@
 -- Features: Advanced modules, notifications, themes, and config system
 -- Version: 4.0.0 - Ultimate Enhancement
 
--- 🔥 MAIN LOADSTRING (Replace with your GitHub URL)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/otter-client-enhanced/main/OtterClient.lua"))()
+-- 🔥 MAIN LOADSTRING - READY TO USE!
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client-enhanced/main/OtterClient.lua"))()
 
 -- 🚀 ALTERNATIVE LOADSTRINGS (Choose one):
 
 -- Option 1: Direct GitHub (Recommended)
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/otter-client-enhanced/main/OtterClient.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client-enhanced/main/OtterClient.lua"))()
 
 -- Option 2: Raw GitHub (Alternative)
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/otter-client-enhanced/main/OtterClient.lua?raw=true"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client-enhanced/main/OtterClient.lua?raw=true"))()
 
 -- Option 3: GitHub with version tag
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/otter-client-enhanced/v4.0.0/OtterClient.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client-enhanced/v4.0.0/OtterClient.lua"))()
 
 -- Option 4: Local file (for testing)
 -- loadstring(readfile("OtterClient.lua"))()
 
 -- 🎯 SETUP INSTRUCTIONS:
--- 1. Replace "YOUR_USERNAME" with your GitHub username
--- 2. Make sure the repository is public
+-- 1. ✅ GitHub username: hijsys (DONE!)
+-- 2. Create repository: otter-client-enhanced (on GitHub.com)
 -- 3. Copy and paste into your executor
 -- 4. Enter key: 123
 -- 5. Enjoy the enhanced experience!
