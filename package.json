@@ -1,0 +1,35 @@
+{
+  "name": "otter-client-enhanced",
+  "version": "4.0.0",
+  "description": "Ultimate Roblox Bedwars Client - Enhanced with Advanced Modules",
+  "main": "OtterClient.lua",
+  "scripts": {
+    "start": "echo 'Otter Client Enhanced - Load the loadstring in your executor!'",
+    "test": "echo 'Testing Otter Client Enhanced...'"
+  },
+  "keywords": [
+    "roblox",
+    "bedwars",
+    "client",
+    "hack",
+    "exploit",
+    "aimbot",
+    "killaura",
+    "esp",
+    "speed",
+    "fly"
+  ],
+  "author": "Otter Client Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/otter-client-enhanced.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/otter-client-enhanced/issues"
+  },
+  "homepage": "https://github.com/your-username/otter-client-enhanced#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
