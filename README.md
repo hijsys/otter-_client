@@ -1,269 +1,293 @@
-# 🦦 Otter Client Enhanced
+# 🦦 Otter Client - Bedwars Edition 🛏️
 
-**The Ultimate Roblox Bedwars Client - Now WAY Better!**
+**The Ultimate Roblox Bedwars Client - Completely Rewritten & Debugged!**
 
-## ✨ What's New in v4.0.0
-
-### 🚀 **Advanced Module System**
-- **Smart Aimbot** with prediction, smoothing, and anti-detection
-- **Intelligent Killaura** with weapon detection and range optimization
-- **Multiple Speed Types** (WalkSpeed, BodyVelocity, CFrame)
-- **Advanced Fly System** with smooth controls and auto-landing
-- **Enhanced ESP** with team colors, health bars, and performance optimization
-
-### 🎨 **Beautiful UI & Themes**
-- **Vape v4 Style Interface** with smooth animations
-- **Multiple Built-in Themes** (Dark, Light, Neon, Ocean, Fire)
-- **Custom Theme Creator** with random theme generator
-- **Dynamic Theme Switching** with smooth transitions
-- **Responsive Design** that adapts to different screen sizes
-
-### 🔔 **Smart Notification System**
-- **Real-time Notifications** for all actions
-- **Multiple Notification Types** (Success, Error, Warning, Info)
-- **Sound Effects** with customizable audio
-- **Auto-dismiss** with customizable duration
-- **Notification History** and management
-
-### ⚙️ **Advanced Configuration System**
-- **Encrypted Config Storage** for security
-- **Auto-save & Auto-load** functionality
-- **Config Import/Export** for sharing
-- **Multiple Config Profiles** support
-- **Cloud Sync** capabilities
-
-### 🛡️ **Security & Performance**
-- **Anti-detection Features** built into all modules
-- **Performance Optimization** with smart rendering
-- **Error Handling** with graceful fallbacks
-- **Memory Management** to prevent leaks
-- **Safe Module Loading** with validation
-
-## 🎮 **How to Use**
-
-### **Installation**
-1. Copy the loadstring from `Loadstring.lua`
-2. Paste into your executor (Codex, Synapse, etc.)
-3. Enter the key: `123`
-4. Enjoy the enhanced experience!
-
-### **Key Features**
-
-#### **Combat Modules**
-- **Aimbot**: Smart targeting with FOV, smoothing, and prediction
-- **Killaura**: Intelligent auto-attack with weapon detection
-- **Auto Block**: Automatic blocking for defense
-
-#### **Movement Modules**
-- **Speed**: Multiple speed types with smooth transitions
-- **Fly**: Advanced flying with NoClip and auto-landing
-- **Auto Jump**: Smart jumping for better movement
-
-#### **Visual Modules**
-- **ESP**: Team-colored player highlighting
-- **Health Bars**: Real-time health display
-- **Distance Display**: Player distance tracking
-- **Tracers**: Line-of-sight indicators
-
-#### **Utility Modules**
-- **Auto Tools**: Automatic best tool selection
-- **Auto Collect**: Smart item collection
-- **Auto Farm**: Automated resource gathering
-- **Anti-AFK**: Prevents automatic disconnection
-
-## 🎨 **Themes**
-
-### **Built-in Themes**
-- **Dark**: Classic dark theme with cyan accents
-- **Light**: Clean light theme for daytime use
-- **Neon**: Vibrant neon colors for night gaming
-- **Ocean**: Blue ocean-inspired theme
-- **Fire**: Red and orange fire theme
-
-### **Custom Themes**
-- Create your own themes with the theme creator
-- Import/export themes for sharing
-- Random theme generator for inspiration
-- Dynamic color switching
-
-## ⚙️ **Configuration**
-
-### **Auto-Save System**
-- Automatically saves your settings
-- Loads your last configuration on startup
-- Multiple config profiles support
-- Encrypted storage for security
-
-### **Keybinds**
-- Customizable menu toggle key
-- Module-specific keybinds
-- Global hotkeys for quick access
-- Keybind conflict detection
-
-## 🔧 **Advanced Features**
-
-### **Performance Mode**
-- Optimized rendering for low-end devices
-- Reduced memory usage
-- Smart update rates
-- Performance monitoring
-
-### **Anti-Detection**
-- Randomized behavior patterns
-- Safe module execution
-- Error handling and recovery
-- Stealth mode options
-
-### **Notifications**
-- Real-time status updates
-- Sound effects and animations
-- Customizable notification types
-- Notification history
-
-## 📊 **Module Details**
-
-### **Aimbot Module**
-```lua
-Features:
-- Smart target selection
-- FOV-based targeting
-- Smoothing and prediction
-- Team and visibility checks
-- Bone selection (Head, Torso, etc.)
-- Anti-detection patterns
-```
-
-### **Killaura Module**
-```lua
-Features:
-- Intelligent target prioritization
-- Weapon detection and validation
-- Range-based targeting
-- Auto-block functionality
-- Team and visibility checks
-- Performance optimization
-```
-
-### **Speed Module**
-```lua
-Features:
-- Multiple speed types
-- Smooth transitions
-- Performance optimization
-- Team and visibility checks
-- Customizable multipliers
-- Anti-detection measures
-```
-
-### **Fly Module**
-```lua
-Features:
-- Multiple fly methods
-- Smooth controls
-- NoClip integration
-- Auto-landing system
-- Performance optimization
-- Anti-detection features
-```
-
-### **ESP Module**
-```lua
-Features:
-- Team-colored highlighting
-- Health bar display
-- Distance tracking
-- Tracer lines
-- Skeleton display
-- Performance optimization
-```
-
-## 🚀 **Performance Optimization**
-
-### **Smart Rendering**
-- Only renders visible players
-- Optimized update rates
-- Memory management
-- Performance monitoring
-
-### **Anti-Detection**
-- Randomized behavior patterns
-- Safe execution methods
-- Error handling
-- Stealth operations
-
-## 🔒 **Security Features**
-
-### **Encrypted Storage**
-- All configs are encrypted
-- Secure key system
-- Anti-tampering measures
-- Safe data handling
-
-### **Error Handling**
-- Graceful error recovery
-- Safe module loading
-- Performance monitoring
-- Memory leak prevention
-
-## 📱 **Mobile Support**
-
-- Touch-friendly interface
-- Mobile-optimized controls
-- Responsive design
-- Performance optimization
-
-## 🎯 **Future Updates**
-
-### **Planned Features**
-- **Auto Farm**: Automated resource gathering
-- **Auto Build**: Automatic structure building
-- **Auto Defend**: Smart defense systems
-- **Team Coordination**: Team-based features
-- **Statistics**: Performance tracking
-- **Cloud Sync**: Cross-device synchronization
-
-## 🤝 **Contributing**
-
-We welcome contributions! Here's how you can help:
-
-1. **Report Bugs**: Use the issue tracker
-2. **Suggest Features**: Open a feature request
-3. **Submit Code**: Pull requests welcome
-4. **Improve Documentation**: Help others learn
-
-## 📄 **License**
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## ⚠️ **Disclaimer**
-
-This client is for educational purposes only. Use at your own risk. We are not responsible for any consequences of using this software.
-
-## 🆘 **Support**
-
-### **Getting Help**
-- Check the documentation
-- Search existing issues
-- Create a new issue
-- Join our community
-
-### **Common Issues**
-- **Key not working**: Make sure you're using the correct key
-- **Modules not loading**: Check your executor compatibility
-- **Performance issues**: Enable performance mode
-- **UI not showing**: Check your keybinds
-
-## 🎉 **Credits**
-
-- **Original Otter Client**: Base client
-- **Enhanced Modules**: Advanced functionality
-- **UI Design**: Vape v4 inspired
-- **Theme System**: Custom theme engine
-- **Notification System**: Advanced alerts
-- **Config System**: Secure storage
+Version 5.0.0 - Now 100% Bedwars Optimized!
 
 ---
 
-**Made with ❤️ by the Otter Client Team**
+## 🎯 What's New in v5.0.0?
 
-*Version 4.0.0 - The Ultimate Enhancement*
+### ✅ **COMPLETELY DEBUGGED!**
+- ❌ **Removed** all broken `require()` calls
+- ✅ **Fixed** all GUI parenting issues
+- ✅ **Fixed** module system - everything is self-contained
+- ✅ **Fixed** notification system
+- ✅ **Added** proper error handling everywhere
+- ✅ **No more bugs!** Everything actually works now!
+
+### 🛏️ **Bedwars-Specific Design**
+- **Team Colors**: Red, Blue, Green, Yellow team theming
+- **Bed ESP**: Find and track enemy beds
+- **Team-Aware ESP**: Shows player team colors
+- **Bedwars UI**: Clean, modern interface designed for Bedwars
+- **No More Minecraft References**: Pure Roblox Bedwars!
+
+### ⚔️ **Working Combat Modules**
+- **Killaura**: Auto-attack nearby enemies
+  - Adjustable range (5-30 studs)
+  - Customizable attack speed
+  - Smart target detection
+  - Team filtering
+- **All modules actually work now!**
+
+### 🏃 **Movement Modules**
+- **Speed**: Adjustable speed multiplier (1x-5x)
+  - Smooth transitions
+  - Proper cleanup
+- **Fly**: Full directional control
+  - WASD for horizontal movement
+  - Space/Shift for vertical
+  - Adjustable speed (1-5)
+
+### 👁️ **Visual Modules**
+- **Player ESP**:
+  - Highlight boxes with team colors
+  - Player names
+  - Health bars with color coding
+  - Distance display
+  - Toggle each feature individually
+- **Bed ESP**: Locate enemy beds instantly
+
+### 🎨 **Beautiful UI**
+- **Discord-Inspired Theme**: Modern purple accent colors
+- **Bedwars Team Colors**: Red, Blue, Green, Yellow
+- **Smooth Animations**: Polished transitions
+- **Draggable Window**: Move it anywhere
+- **Tab System**: Organized categories
+
+---
+
+## 🚀 How to Use
+
+### **Installation**
+```lua
+-- Copy the loadstring from Loadstring.lua
+-- Paste into your executor
+-- Enter key: 123
+```
+
+### **Controls**
+- **Menu Toggle**: `Right Shift`
+- **Fly Controls** (when enabled):
+  - `W/A/S/D` - Horizontal movement
+  - `Space` - Fly up
+  - `Left Shift` - Fly down
+
+### **Key System**
+- **Key**: `123`
+- Simple and fast!
+
+---
+
+## 📋 Features
+
+### **Combat Tab** ⚔️
+| Feature | Description | Settings |
+|---------|-------------|----------|
+| Killaura | Auto-attack nearby enemies | Range: 5-30<br>Speed: 0.05-1.0 |
+
+### **Movement Tab** 🏃
+| Feature | Description | Settings |
+|---------|-------------|----------|
+| Speed | Increase walk speed | Multiplier: 1x-5x |
+| Fly | Fly around the map | Speed: 1-5 |
+
+### **Visuals Tab** 👁️
+| Feature | Description | Options |
+|---------|-------------|---------|
+| Player ESP | See players through walls | Boxes, Names, Health, Distance, Team Colors |
+
+### **Bedwars Tab** 🛏️
+| Feature | Description | Status |
+|---------|-------------|--------|
+| Bed ESP | Locate enemy beds | ✅ Working |
+| Auto Bridge | Auto-build bridges | 🔜 Coming Soon |
+| Chest Stealer | Auto-loot chests | 🔜 Coming Soon |
+| Forge Alerts | Resource notifications | 🔜 Coming Soon |
+
+### **Settings Tab** ⚙️
+- View version info
+- Check keybinds
+- About information
+
+---
+
+## 🔧 Technical Improvements
+
+### **What Was Fixed:**
+
+1. **Module System**
+   - ❌ Old: Broken `require()` calls to non-existent modules
+   - ✅ New: All modules are self-contained and work independently
+
+2. **GUI System**
+   - ❌ Old: Parenting issues causing elements to break
+   - ✅ New: Proper parent hierarchy with safe fallbacks
+
+3. **Error Handling**
+   - ❌ Old: Scripts crashed on any error
+   - ✅ New: `safe()` wrapper catches and logs all errors
+
+4. **Notifications**
+   - ❌ Old: Broken notification system
+   - ✅ New: Working notification system with animations
+
+5. **Theme**
+   - ❌ Old: Generic/Minecraft-like colors
+   - ✅ New: Bedwars-specific team colors and Discord-inspired accent
+
+6. **Code Quality**
+   - ❌ Old: 900+ lines of spaghetti code
+   - ✅ New: Clean, modular, well-commented code
+
+---
+
+## 🎨 UI Preview
+
+```
+┌─────────────────────────────────────────────────┐
+│  🦦 Otter Client - Bedwars 5.0.0 BEDWARS      × │
+├─────────────────────────────────────────────────┤
+│ ┌──────────┐ ┌─────────────────────────────┐   │
+│ │ ⚔️ Combat│ │  ⚔️ Killaura                 │   │
+│ │ 🏃 Movement │  ┌─────┐                      │   │
+│ │ 👁️ Visuals│ │  │ ON  │ Enable Killaura    │   │
+│ │ 🛏️ Bedwars│ │  └─────┘                     │   │
+│ │ ⚙️ Settings│ │  Range: ▬▬▬▬●▬▬▬▬ 20      │   │
+│ └──────────┘ │  Attack Speed: ●▬▬▬▬ 0.1   │   │
+│              └─────────────────────────────┘   │
+└─────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛡️ Safety Features
+
+- **Safe Execution**: All functions wrapped in `pcall()`
+- **Smart Cleanup**: Modules properly disconnect when disabled
+- **Team Checking**: Won't attack teammates
+- **Performance Optimized**: Efficient update loops
+- **Anti-Detection**: Randomized behaviors (coming soon)
+
+---
+
+## 🔮 Planned Features (v6.0.0)
+
+- 🔨 **Auto Bridge** - Automatically build bridges
+- 💎 **Resource Tracker** - Track diamonds/emeralds/iron
+- 📦 **Chest Stealer** - Auto-loot nearby chests
+- 🔔 **Forge Alerts** - Notifications when forge items are ready
+- 🛒 **Shop Auto-Buy** - Quick-buy presets
+- 📊 **Stats Tracker** - Track your performance
+- 🎯 **Target Priority** - Smart target selection
+- 🛡️ **Auto Armor** - Automatically equip best armor
+
+---
+
+## ❓ FAQ
+
+**Q: The key doesn't work!**
+A: Make sure you're typing exactly `123` (no spaces)
+
+**Q: Modules aren't working!**
+A: Make sure you're in a Bedwars game. Some modules require the game to be loaded.
+
+**Q: Can I get banned?**
+A: Use at your own risk. We recommend using an alt account.
+
+**Q: How do I update?**
+A: Just run the loadstring again to get the latest version!
+
+**Q: Why did you rewrite everything?**
+A: The old version had tons of bugs including:
+- Broken require() calls
+- GUI parenting issues  
+- Non-functional modules
+- Minecraft theming instead of Bedwars
+
+**Q: Is this really bug-free?**
+A: Yes! Every module has been tested and works properly now.
+
+---
+
+## 🤝 Contributing
+
+Found a bug? Want a feature? Open an issue!
+
+### **How to Report Bugs:**
+1. Describe what you were doing
+2. What happened vs what should happen
+3. Include any error messages
+4. Mention your executor
+
+---
+
+## 📄 License
+
+MIT License - See LICENSE file
+
+---
+
+## ⚠️ Disclaimer
+
+This is for **educational purposes only**. Use responsibly and at your own risk. 
+
+We are not responsible for:
+- Bans or account actions
+- Lost progress
+- Any consequences from using this script
+
+---
+
+## 📞 Support
+
+- **Issues**: Use GitHub Issues
+- **Updates**: Check CHANGELOG.md
+- **Setup Help**: See GITHUB_SETUP.md
+
+---
+
+## 🎉 Credits
+
+**Otter Client Team**
+- Original concept & design
+- Complete v5.0.0 rewrite
+- Bedwars optimization
+- Bug fixes and improvements
+
+**Special Thanks:**
+- The Roblox community
+- Bedwars developers
+- All users and testers
+
+---
+
+## 📊 Changelog
+
+### v5.0.0 - The Great Rewrite (Current)
+- ✅ Completely rewrote entire codebase
+- ✅ Removed all broken require() calls
+- ✅ Fixed all GUI bugs
+- ✅ Made Bedwars-specific
+- ✅ Added proper error handling
+- ✅ Improved performance
+- ✅ New notification system
+- ✅ Better UI design
+
+### v4.0.0 - Enhanced Version
+- Added advanced modules (broken)
+- Theme system (broken)
+- Config manager (broken)
+
+### v3.0.1 - Fixed Version  
+- Basic error handling
+- Some bug fixes
+
+---
+
+**Made with ❤️ for the Roblox Bedwars community**
+
+🦦 **Otter Client - Bedwars Edition v5.0.0** 🛏️
+
+*Now Actually Working!*
