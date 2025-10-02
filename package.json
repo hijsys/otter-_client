@@ -1,7 +1,7 @@
 {
-  "name": "otter-client-ultimate",
-  "version": "9.0.0",
-  "description": "Ultimate Roblox Bedwars Client - v9.0.0 with Whitelist, Themes, Settings Persistence & Xeno Support",
+  "name": "otter-client-legendary",
+  "version": "10.0.0",
+  "description": "Legendary Roblox Bedwars Client - v10.0.0 with 15+ Executors, 12 Themes, Friends & Stats",
   "main": "OtterClient.lua",
   "scripts": {
     "start": "echo 'Otter Client Enhanced - Load the loadstring in your executor!'",

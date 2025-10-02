@@ -1,44 +1,31 @@
--- 🦦 OTTER CLIENT v10.0.0 - LEGENDARY EDITION 🌟
--- ✅ UNIVERSAL EXECUTOR SUPPORT (15+ Executors!)
--- ✅ 23 TOTAL MODULES (8 Brand New!)
--- ✅ 12 Premium Themes
--- ✅ Friend System & Stats Tracker
--- ✅ Custom Keybinds & Module Profiles
--- ✅ Anti-Cheat v4.0 (AI-Like Behavior)
--- ✅ Advanced Visuals (Tracers, Chams)
--- ✅ 100% ERROR-FREE GUARANTEED
--- Key: 123 | Toggle: Right Shift | Made by hijsys
+-- 🦦 OTTER CLIENT v9.0.0 - ULTIMATE EDITION 🚀
+-- ✅ Advanced Whitelist System
+-- ✅ Multiple Premium Themes
+-- ✅ Enhanced Anti-Cheat Bypass
+-- ✅ Settings Persistence (Fixed!)
+-- ✅ Xeno Support
+-- ✅ 15+ Working Modules
+-- Key: 123 | Toggle: Right Shift
 
-print("🦦 Loading Otter Client v10.0.0 LEGENDARY EDITION...")
-print("⚡ Initializing Universal Executor Support...")
+print("🦦 Loading Otter Client v9.0.0 ULTIMATE EDITION...")
 
--- UNIVERSAL EXECUTOR DETECTION v2.0 (Supports 15+ Executors!)
+-- Advanced Executor Detection with Xeno Support
 local function getExecutor()
-    local executors = {
-        {check = function() return XENO_LOADED or (getexecutorname and getexecutorname():lower():find("xeno")) end, name = "Xeno"},
-        {check = function() return SOLARA_LOADED or (getexecutorname and getexecutorname():lower():find("solara")) end, name = "Solara"},
-        {check = function() return KRNL_LOADED end, name = "KRNL"},
-        {check = function() return syn end, name = "Synapse X"},
-        {check = function() return WAVE_LOADED or (getexecutorname and getexecutorname():lower():find("wave")) end, name = "Wave"},
-        {check = function() return fluxus end, name = "Fluxus"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("arceus") end, name = "Arceus X"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("delta") end, name = "Delta"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("codex") end, name = "Codex"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("evon") end, name = "Evon"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("hydrogen") end, name = "Hydrogen"},
-        {check = function() return OXYGEN_LOADED or (getexecutorname and getexecutorname():lower():find("oxygen")) end, name = "Oxygen U"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("trigon") end, name = "Trigon"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("nezur") end, name = "Nezur"},
-        {check = function() return getexecutorname and getexecutorname():lower():find("script") and getexecutorname():lower():find("ware") end, name = "Script-Ware"},
-        {check = function() return identifyexecutor end, name = identifyexecutor and identifyexecutor() or "Universal"}
-    }
-    
-    for _, exec in ipairs(executors) do
-        local success, result = pcall(exec.check)
-        if success and result then return exec.name end
+    if XENO_LOADED or (getexecutorname and getexecutorname():lower():find("xeno")) then
+        return "Xeno"
+    elseif identifyexecutor then
+        return identifyexecutor()
+    elseif KRNL_LOADED then
+        return "KRNL"
+    elseif syn then
+        return "Synapse X"
+    elseif SOLARA_LOADED or (getexecutorname and getexecutorname():lower():find("solara")) then
+        return "Solara"
+    elseif getexecutorname then
+        return getexecutorname()
+    else
+        return "Unknown"
     end
-    
-    return getexecutorname and getexecutorname() or "Universal"
 end
 
 local EXECUTOR = getExecutor()
@@ -165,187 +152,43 @@ local THEMES = {
         WARN = Color3.fromRGB(255,220,100),
         TXT = Color3.fromRGB(240,250,255),
         DIM = Color3.fromRGB(150,180,200)
-    },
-    Cherry = {
-        Name = "Cherry Blossom",
-        BG1 = Color3.fromRGB(30,15,20),
-        BG2 = Color3.fromRGB(45,25,35),
-        BG3 = Color3.fromRGB(60,35,50),
-        ACC = Color3.fromRGB(255,100,150),
-        SUC = Color3.fromRGB(150,255,200),
-        ERR = Color3.fromRGB(255,70,70),
-        WARN = Color3.fromRGB(255,190,100),
-        TXT = Color3.fromRGB(255,240,245),
-        DIM = Color3.fromRGB(200,170,180)
-    },
-    Matrix = {
-        Name = "Matrix Green",
-        BG1 = Color3.fromRGB(0,10,0),
-        BG2 = Color3.fromRGB(0,20,0),
-        BG3 = Color3.fromRGB(0,30,0),
-        ACC = Color3.fromRGB(0,255,70),
-        SUC = Color3.fromRGB(100,255,100),
-        ERR = Color3.fromRGB(255,0,0),
-        WARN = Color3.fromRGB(255,255,0),
-        TXT = Color3.fromRGB(0,255,0),
-        DIM = Color3.fromRGB(0,180,0)
-    },
-    Neon = {
-        Name = "Neon Cyber",
-        BG1 = Color3.fromRGB(15,0,25),
-        BG2 = Color3.fromRGB(25,0,40),
-        BG3 = Color3.fromRGB(35,0,55),
-        ACC = Color3.fromRGB(255,0,255),
-        SUC = Color3.fromRGB(0,255,255),
-        ERR = Color3.fromRGB(255,0,100),
-        WARN = Color3.fromRGB(255,200,0),
-        TXT = Color3.fromRGB(255,255,255),
-        DIM = Color3.fromRGB(200,100,200)
-    },
-    Gold = {
-        Name = "Golden Luxury",
-        BG1 = Color3.fromRGB(20,15,0),
-        BG2 = Color3.fromRGB(35,25,0),
-        BG3 = Color3.fromRGB(50,40,10),
-        ACC = Color3.fromRGB(255,215,0),
-        SUC = Color3.fromRGB(150,255,100),
-        ERR = Color3.fromRGB(255,50,50),
-        WARN = Color3.fromRGB(255,180,0),
-        TXT = Color3.fromRGB(255,250,230),
-        DIM = Color3.fromRGB(200,180,100)
-    },
-    Ice = {
-        Name = "Ice Blue",
-        BG1 = Color3.fromRGB(15,20,30),
-        BG2 = Color3.fromRGB(25,35,50),
-        BG3 = Color3.fromRGB(40,55,75),
-        ACC = Color3.fromRGB(100,200,255),
-        SUC = Color3.fromRGB(150,255,200),
-        ERR = Color3.fromRGB(255,100,150),
-        WARN = Color3.fromRGB(255,200,150),
-        TXT = Color3.fromRGB(240,250,255),
-        DIM = Color3.fromRGB(150,180,200)
-    },
-    Fire = {
-        Name = "Fire Red",
-        BG1 = Color3.fromRGB(30,10,0),
-        BG2 = Color3.fromRGB(50,20,0),
-        BG3 = Color3.fromRGB(70,30,10),
-        ACC = Color3.fromRGB(255,100,0),
-        SUC = Color3.fromRGB(150,255,100),
-        ERR = Color3.fromRGB(255,0,0),
-        WARN = Color3.fromRGB(255,150,0),
-        TXT = Color3.fromRGB(255,250,240),
-        DIM = Color3.fromRGB(200,150,100)
     }
 }
 
 local T = THEMES.Discord -- Default theme
 
--- CONFIG SYSTEM v2.0 with Persistence!
+-- CONFIG SYSTEM with Persistence!
 local CONFIG = {
-    Version = "10.0.0",
+    Version = "9.0.0",
     CurrentTheme = "Discord",
-    CurrentProfile = "Default",
     Settings = {},
-    Modules = {},
-    Keybinds = {},
-    Profiles = {Default = {}},
-    Friends = {},
-    Stats = {Kills = 0, Deaths = 0, Wins = 0, Playtime = 0, StartTime = os.time()}
+    Modules = {}
 }
 
--- Save/Load Config v2.0
+-- Save/Load Config
 local function saveConfig()
-    safe(function()
-        if writefile then
-            local data = {
-                Theme = CONFIG.CurrentTheme,
-                Profile = CONFIG.CurrentProfile,
-                Settings = CONFIG.Settings,
-                Modules = CONFIG.Modules,
-                Keybinds = CONFIG.Keybinds,
-                Profiles = CONFIG.Profiles,
-                Friends = CONFIG.Friends,
-                Stats = CONFIG.Stats
-            }
-            writefile("OtterClient_v10_Config.json", HttpService:JSONEncode(data))
-        end
-    end)
+    local data = {
+        Theme = CONFIG.CurrentTheme,
+        Settings = CONFIG.Settings,
+        Modules = CONFIG.Modules
+    }
+    writefile("OtterClient_v9_Config.json", HttpService:JSONEncode(data))
 end
 
 local function loadConfig()
-    if isfile and readfile and isfile("OtterClient_v10_Config.json") then
+    if isfile and isfile("OtterClient_v9_Config.json") then
         local success, data = pcall(function()
-            return HttpService:JSONDecode(readfile("OtterClient_v10_Config.json"))
+            return HttpService:JSONDecode(readfile("OtterClient_v9_Config.json"))
         end)
         if success and data then
             CONFIG.CurrentTheme = data.Theme or "Discord"
-            CONFIG.CurrentProfile = data.Profile or "Default"
             CONFIG.Settings = data.Settings or {}
             CONFIG.Modules = data.Modules or {}
-            CONFIG.Keybinds = data.Keybinds or {}
-            CONFIG.Profiles = data.Profiles or {Default={}}
-            CONFIG.Friends = data.Friends or {}
-            CONFIG.Stats = data.Stats or {Kills=0,Deaths=0,Wins=0,Playtime=0,StartTime=os.time()}
             T = THEMES[CONFIG.CurrentTheme] or THEMES.Discord
             return true
         end
     end
     return false
-end
-
--- FRIEND SYSTEM (NEW in v10!)
-local Friends = {}
-function Friends:Add(name)
-    if not table.find(CONFIG.Friends, name) then
-        table.insert(CONFIG.Friends, name)
-        saveConfig()
-        return true
-    end
-    return false
-end
-
-function Friends:Remove(name)
-    local idx = table.find(CONFIG.Friends, name)
-    if idx then
-        table.remove(CONFIG.Friends, idx)
-        saveConfig()
-        return true
-    end
-    return false
-end
-
-function Friends:IsFriend(name)
-    return table.find(CONFIG.Friends, name) ~= nil
-end
-
--- STATS TRACKER (NEW in v10!)
-local Stats = CONFIG.Stats
-
-function Stats:AddKill()
-    self.Kills = (self.Kills or 0) + 1
-    saveConfig()
-end
-
-function Stats:AddDeath()
-    self.Deaths = (self.Deaths or 0) + 1
-    saveConfig()
-end
-
-function Stats:AddWin()
-    self.Wins = (self.Wins or 0) + 1
-    saveConfig()
-end
-
-function Stats:GetKD()
-    local k = self.Kills or 0
-    local d = self.Deaths or 0
-    return d > 0 and math.floor((k / d) * 100) / 100 or k
-end
-
-function Stats:GetPlaytime()
-    return math.floor((os.time() - (self.StartTime or os.time())) / 60)
 end
 
 -- ADVANCED WHITELIST SYSTEM
@@ -384,21 +227,19 @@ function WL:IsPremium(username)
     return user and user.premium == true
 end
 
--- ADVANCED ANTI-CHEAT BYPASS v4.0 (AI-Like Behavior!)
+-- ADVANCED ANTI-CHEAT BYPASS v3.0
 local AntiCheat = {
     Enabled = true,
     Randomization = true,
     HumanDelay = true,
     AntiLog = true,
     Spoofing = true,
-    PacketDelay = true,
-    AIBehavior = true,
-    AdaptiveDelay = true
+    PacketDelay = true
 }
 
 function AntiCheat:RandomDelay()
     if self.HumanDelay then
-        task.wait(math.random(2,18)/1000)
+        task.wait(math.random(3,20)/1000)
     end
 end
 
@@ -411,29 +252,14 @@ end
 function AntiCheat:SecureRemote(func)
     if not self.AntiLog then return func() end
     self:RandomDelay()
-    return safe(func)
+    local success, result = pcall(func)
+    return success and result
 end
 
+-- Advanced packet delay simulation
 function AntiCheat:PacketThrottle()
     if self.PacketDelay then
-        task.wait(math.random(8,35)/1000)
-    end
-end
-
--- NEW: AI-Like behavior patterns
-function AntiCheat:AIDelay()
-    if self.AIBehavior then
-        task.wait(math.random(50,200)/1000)
-    end
-end
-
--- NEW: Adaptive delays based on game state
-function AntiCheat:AdaptiveWait(baseTime)
-    if self.AdaptiveDelay then
-        local variance = math.random(80,120)/100
-        task.wait(baseTime * variance)
-    else
-        task.wait(baseTime)
+        task.wait(math.random(10,40)/1000)
     end
 end
 
@@ -1058,7 +884,7 @@ local function showKey()
     title.Size = UDim2.new(1,-40,0,50)
     title.Position = UDim2.new(0,20,0,20)
     title.BackgroundTransparency = 1
-    title.Text = "🦦 Otter Client v10.0.0"
+    title.Text = "🦦 Otter Client v9.0.0"
     title.TextColor3 = T.ACC
     title.TextSize = 24
     title.Font = Enum.Font.GothamBold
@@ -1068,7 +894,7 @@ local function showKey()
     sub.Size = UDim2.new(1,-40,0,30)
     sub.Position = UDim2.new(0,20,0,75)
     sub.BackgroundTransparency = 1
-    sub.Text = "LEGENDARY EDITION | "..EXECUTOR
+    sub.Text = "ULTIMATE EDITION | "..EXECUTOR
     sub.TextColor3 = T.SUC
     sub.TextSize = 13
     sub.Font = Enum.Font.GothamBold
@@ -1078,7 +904,7 @@ local function showKey()
     info.Size = UDim2.new(1,-40,0,50)
     info.Position = UDim2.new(0,20,0,110)
     info.BackgroundTransparency = 1
-    info.Text = "🌟 12 Themes | 👥 Friends | 📊 Stats\n🛡️ Anti-Cheat v4.0 | ⚡ 15+ Executors"
+    info.Text = "🚀 Advanced Whitelist | 🎨 Multiple Themes\n🛡️ Enhanced Anti-Cheat | 💾 Settings Persistence"
     info.TextColor3 = T.DIM
     info.TextSize = 11
     info.Font = Enum.Font.Gotham
@@ -1344,7 +1170,7 @@ function GUI:Init()
     title.Size = UDim2.new(1,-200,1,0)
     title.Position = UDim2.new(0,15,0,0)
     title.BackgroundTransparency = 1
-    title.Text = "🦦 Otter v10.0.0 - Legendary Edition"
+    title.Text = "🦦 Otter v9.0.0 - Ultimate Edition"
     title.TextColor3 = T.ACC
     title.TextSize = 17
     title.Font = Enum.Font.GothamBold
@@ -1728,9 +1554,7 @@ Made for Roblox Bedwars!]], EXECUTOR)
 end
 
 -- START
-print("🦦 Otter v10.0.0 LEGENDARY EDITION loading...")
-print("⚡ Universal Executor Support Active!")
-print("📊 Friend System & Stats Tracker Ready!")
+print("🦦 Otter v9.0.0 Ultimate Edition loading...")
 
 -- Try to load saved config
 loadConfig()
@@ -1754,7 +1578,7 @@ else
     Notifs:Info("Welcome", "Hello, "..plr.Name.."!")
 end
 
-Notifs:Success("Loaded", "Otter v10.0.0 Legendary!")
+Notifs:Success("Loaded", "Otter v9.0.0 Ultimate!")
 GUI:Init()
 
 UIS.InputBegan:Connect(function(inp, gpe)
@@ -1782,8 +1606,7 @@ if isPremium then
     Notifs:Success("Premium", "All features unlocked! 👑")
 end
 Notifs:Success("Anti-Cheat", "Bypass enabled! 🛡️")
-print("✅ Otter Client v10.0.0 LEGENDARY EDITION loaded!")
-print("🛡️ Anti-Cheat v4.0 active with AI behavior!")
-print("🎨 Theme: "..T.Name.." (12 themes available!)")
-print("⚡ Executor: "..EXECUTOR.." (15+ supported!)")
-print("👥 Friend System Ready | 📊 Stats Tracking Active")
+print("✅ Otter Client v9.0.0 loaded!")
+print("🛡️ Anti-detection active!")
+print("🎨 Theme: "..T.Name)
+print("⚡ Executor: "..EXECUTOR)

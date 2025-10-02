@@ -1,7 +1,8 @@
--- 🦦 Otter Client v9.0.0 - Loadstring
+-- 🦦 Otter Client v10.0.0 - Loadstring
 -- This loads the main OtterClient.lua file from GitHub
 
-print("🦦 Loading Otter Client v9.0.0 ULTIMATE EDITION...")
+print("🦦 Loading Otter Client v10.0.0 LEGENDARY EDITION...")
+print("⚡ 15+ Executors | 12 Themes | Friends & Stats!")
 
 -- GitHub Loadstring (Official)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client/main/OtterClient.lua"))()
@@ -12,6 +13,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client/m
 print("✅ Loaded from GitHub!")
 print("🔑 Key: 123")
 print("⌨️  Toggle: Right Shift")
+print("🌟 v10.0.0 LEGENDARY EDITION")
 
 -- For now, tell user to copy-paste the main file
 warn([[
