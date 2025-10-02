@@ -195,8 +195,9 @@ end
 local WL = {
     Enabled = true,
     Users = {
-        ["Player1"] = {premium = true, expires = nil},
-        ["Player2"] = {premium = false, expires = os.time() + 86400}
+        -- ADD YOUR ROBLOX USERNAME HERE (case-sensitive!)
+        -- Example: ["YourRobloxName"] = {premium = true, expires = nil},
+        ["Owner"] = {premium = true, expires = nil},  -- Replace "Owner" with YOUR Roblox username
     },
     AdminKey = "OTTER_ADMIN_2024"
 }

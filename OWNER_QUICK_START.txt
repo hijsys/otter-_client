@@ -1,0 +1,208 @@
+═══════════════════════════════════════════════════════════════════
+🦦 OTTER CLIENT v9.0.0 - OWNER QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════
+
+👤 GitHub Username: hijsys
+📦 Repository: otter-client (or whatever you name it)
+
+═══════════════════════════════════════════════════════════════════
+🔐 STEP 1: WHITELIST YOURSELF
+═══════════════════════════════════════════════════════════════════
+
+1. Open: OtterClient.lua
+2. Go to: Line 200 (around line 195-203)
+3. Find this code:
+
+   local WL = {
+       Enabled = true,
+       Users = {
+           ["Owner"] = {premium = true, expires = nil},
+       },
+       AdminKey = "OTTER_ADMIN_2024"
+   }
+
+4. Replace "Owner" with YOUR ROBLOX USERNAME (case-sensitive!)
+
+   Example if your Roblox username is "CoolGamer123":
+
+   local WL = {
+       Enabled = true,
+       Users = {
+           ["CoolGamer123"] = {premium = true, expires = nil},
+       },
+       AdminKey = "OTTER_ADMIN_2024"
+   }
+
+5. Save the file!
+
+═══════════════════════════════════════════════════════════════════
+📤 STEP 2: UPLOAD TO GITHUB
+═══════════════════════════════════════════════════════════════════
+
+1. Go to: https://github.com/hijsys
+2. Click: "New repository" (green button)
+3. Repository name: otter-client (or any name you want)
+4. Set to: Public
+5. Click: "Create repository"
+
+6. Upload these files:
+   ✅ OtterClient.lua (REQUIRED - main script)
+   ✅ Loadstring.lua (has your loadstring ready)
+   ✅ README.md (documentation)
+   ✅ CHANGELOG.md (update history)
+   ✅ SETUP_GUIDE.md (user guide)
+   ✅ WHITELIST_GUIDE.md (how to add users)
+   ✅ UPDATE_NOTES_v9.md (v9 details)
+   ✅ WHATS_NEW.md (features)
+   ✅ LICENSE (MIT license)
+   ✅ All other files (optional)
+
+7. Commit the files!
+
+═══════════════════════════════════════════════════════════════════
+🚀 STEP 3: GET YOUR LOADSTRING
+═══════════════════════════════════════════════════════════════════
+
+Your official loadstring (ready to use after upload):
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client/main/OtterClient.lua"))()
+
+Or use the Loadstring.lua file which already has this!
+
+═══════════════════════════════════════════════════════════════════
+🎮 STEP 4: TEST IT
+═══════════════════════════════════════════════════════════════════
+
+1. Open Roblox Bedwars
+2. Open your executor (Xeno, Solara, KRNL, etc.)
+3. Paste the loadstring above
+4. Execute
+5. Enter key: 123
+6. You should see: "👑 Welcome back, [YourName]! Premium user!"
+7. Press Right Shift to open GUI
+8. Enjoy!
+
+═══════════════════════════════════════════════════════════════════
+👥 STEP 5: ADD FRIENDS (OPTIONAL)
+═══════════════════════════════════════════════════════════════════
+
+Edit OtterClient.lua line 200:
+
+Add premium friends (unlimited access):
+Users = {
+    ["YourUsername"] = {premium = true, expires = nil},
+    ["Friend1"] = {premium = true, expires = nil},
+    ["Friend2"] = {premium = true, expires = nil},
+}
+
+Add trial users (7 days):
+Users = {
+    ["YourUsername"] = {premium = true, expires = nil},
+    ["TrialUser"] = {premium = false, expires = os.time() + 604800},
+}
+
+Then re-upload to GitHub!
+
+═══════════════════════════════════════════════════════════════════
+📖 IMPORTANT REMINDERS
+═══════════════════════════════════════════════════════════════════
+
+✅ Your Roblox username is CASE-SENSITIVE!
+✅ After editing whitelist, save and re-upload to GitHub
+✅ Users must use YOUR loadstring to get updates
+✅ Key is: 123 (can be changed in code)
+✅ Toggle GUI: Right Shift
+
+═══════════════════════════════════════════════════════════════════
+🎨 YOUR LOADSTRINGS
+═══════════════════════════════════════════════════════════════════
+
+MAIN SCRIPT:
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client/main/OtterClient.lua"))()
+
+LOADSTRING FILE (simpler for users):
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client/main/Loadstring.lua"))()
+
+AFTER YOU UPLOAD, SHARE EITHER OF THESE WITH USERS!
+
+═══════════════════════════════════════════════════════════════════
+🎯 WHAT YOU GET IN v9.0.0
+═══════════════════════════════════════════════════════════════════
+
+✅ Advanced Whitelist System (premium + free tiers)
+✅ 6 Premium Themes (Discord, Midnight, Sunset, Forest, Purple, Ocean)
+✅ Settings Persistence (saves when switching tabs!)
+✅ Xeno Executor Support
+✅ Enhanced Anti-Cheat Bypass v3.0
+✅ 15 Modules (11 upgraded + 4 new)
+✅ Beautiful Animations
+✅ Config Save/Load
+✅ Zero Bugs!
+
+NEW MODULES:
+• Auto Clicker (5-20 CPS)
+• Reach (10-25 studs)
+• No Fall Damage
+• Scaffold (advanced bridging)
+
+═══════════════════════════════════════════════════════════════════
+🔧 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════
+
+"Not whitelisted" error?
+→ Check your Roblox username is correct in the whitelist
+→ Username is case-sensitive!
+→ Make sure you saved and uploaded the file
+
+"404 Not Found" error?
+→ Make sure you uploaded to GitHub first
+→ Check the URL matches your username
+→ Repository must be PUBLIC
+
+GUI doesn't open?
+→ Press Right Shift to toggle
+→ Check if executor supports CoreGui
+
+Settings don't save?
+→ Some executors don't support writefile
+→ Use manual save in Utility tab
+
+═══════════════════════════════════════════════════════════════════
+📞 HELP & DOCUMENTATION
+═══════════════════════════════════════════════════════════════════
+
+Full guides available:
+• README.md - Complete documentation
+• SETUP_GUIDE.md - How to load the script
+• WHITELIST_GUIDE.md - How to manage whitelist
+• CHANGELOG.md - Version history
+• UPDATE_NOTES_v9.md - v9 details
+• WHATS_NEW.md - Feature showcase
+
+All files are in /workspace/ directory!
+
+═══════════════════════════════════════════════════════════════════
+🎉 YOU'RE ALL SET!
+═══════════════════════════════════════════════════════════════════
+
+CHECKLIST:
+[ ] Whitelist yourself in OtterClient.lua (line 200)
+[ ] Save the file
+[ ] Upload to GitHub (github.com/hijsys/otter-client)
+[ ] Test with your loadstring
+[ ] Share with friends!
+
+REMEMBER:
+• Key: 123
+• Toggle: Right Shift
+• Your loadstring is ready in Loadstring.lua
+• You're the owner with premium access!
+
+═══════════════════════════════════════════════════════════════════
+
+🦦 Otter Client v9.0.0 - ULTIMATE EDITION
+Made with 💙 for the Roblox Bedwars community
+
+Now go dominate some Bedwars! 🛏️⚔️
+
+═══════════════════════════════════════════════════════════════════

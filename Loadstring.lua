@@ -1,22 +1,17 @@
 -- 🦦 Otter Client v9.0.0 - Loadstring
--- This loads the main OtterClient.lua file
+-- This loads the main OtterClient.lua file from GitHub
 
-print("🦦 Loading Otter Client v9.0.0...")
+print("🦦 Loading Otter Client v9.0.0 ULTIMATE EDITION...")
 
--- Option 1: Load from GitHub (once you upload)
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/your-username/otter-client/main/OtterClient.lua"))()
+-- GitHub Loadstring (Official)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-client/main/OtterClient.lua"))()
 
--- Option 2: Load from Pastebin (recommended for now)
--- Upload OtterClient.lua to pastebin.com and use:
+-- Alternative: Pastebin (if GitHub is down)
 -- loadstring(game:HttpGet("https://pastebin.com/raw/YOUR_PASTE_ID"))()
 
--- Option 3: Load from local file (for testing)
--- Just execute OtterClient.lua directly in your executor
-
-print("⚠️ Please use one of these methods:")
-print("1. Upload OtterClient.lua to Pastebin and use the raw link")
-print("2. Copy the entire OtterClient.lua content and execute it directly")
-print("3. Upload to GitHub and update the URL")
+print("✅ Loaded from GitHub!")
+print("🔑 Key: 123")
+print("⌨️  Toggle: Right Shift")
 
 -- For now, tell user to copy-paste the main file
 warn([[
