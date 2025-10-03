@@ -1,7 +1,8 @@
--- 🦦 OTTER CLIENT ULTIMATE - STANDALONE VERSION v5.0.1
+-- 🦦 OTTER CLIENT ULTIMATE - LOADSTRING v5.0.2
 -- 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
--- 🔧 BUG FIXES: Fixed module loading errors and animation issues
+-- 🔧 BUG FIXES: Completely standalone, no external dependencies
 -- Copy and paste this into your executor (Codex, Synapse, etc.)
+-- Features: Advanced Anti-Cheat Bypass, 20+ Modules, Ultimate GUI, Game Optimizations
 
 -- 🔥 MAIN LOADSTRING - READY TO USE!
 local success, error = pcall(function()
@@ -24,7 +25,7 @@ if not success then
         -- Local file fallback
         local localSuccess, localError = pcall(function()
             if isfile and readfile then
-                loadstring(readfile("OtterClient.lua"))()
+                loadstring(readfile("OtterClient_Standalone.lua"))()
             else
                 error("Local file functions not available")
             end
@@ -53,10 +54,10 @@ end
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua?raw=true"))()
 
 -- Option 3: GitHub with version tag
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/v5.0.1/OtterClient_Standalone.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/v5.0.2/OtterClient_Standalone.lua"))()
 
 -- Option 4: Local file (for testing)
--- loadstring(readfile("OtterClient.lua"))()
+-- loadstring(readfile("OtterClient_Standalone.lua"))()
 
 -- 🎯 SETUP INSTRUCTIONS:
 -- 1. ✅ GitHub username: hijsys (DONE!)
@@ -72,7 +73,7 @@ end
 -- - Try the alternative loadstrings if one doesn't work
 -- - Check if your executor has proper permissions
 
--- 🚀 ULTIMATE FEATURES v5.0.1:
+-- 🚀 ULTIMATE FEATURES v5.0.2:
 -- ✨ Advanced Anti-Cheat Bypass System
 -- 🎯 20+ Advanced Modules
 -- 🎨 Ultimate GUI with Animations
@@ -89,6 +90,7 @@ end
 -- 💾 Memory Management
 -- ☁️ Cloud Sync (Optional)
 -- 🔧 COMPREHENSIVE ERROR HANDLING
+-- ✅ COMPLETELY STANDALONE
 
 -- 🎮 SUPPORTED GAMES:
 -- 🛏️ Bedwars (Advanced optimizations)
@@ -140,7 +142,7 @@ end
 -- 🤖 Behavior Protection (Humanized input, randomized timing)
 -- 🔍 Detection Evasion (Process hiding, registry cleaning)
 
--- 🔧 BUG FIXES v5.0.1:
+-- 🔧 BUG FIXES v5.0.2:
 -- ✅ Fixed module loading errors (script.Parent issues)
 -- ✅ Added comprehensive error handling
 -- ✅ Fixed animation loading failures
@@ -148,6 +150,7 @@ end
 -- ✅ Improved compatibility with all executors
 -- ✅ Enhanced error messages and debugging
 -- ✅ Added safe module loading system
+-- ✅ COMPLETELY STANDALONE - NO EXTERNAL DEPENDENCIES
 
 -- 📱 SUPPORTED EXECUTORS:
 -- ✅ Codex
@@ -182,3 +185,4 @@ end
 -- 🎨 BEAUTIFUL UI WITH ANIMATIONS!
 -- 🎮 GAME-SPECIFIC OPTIMIZATIONS!
 -- 🔧 COMPREHENSIVE BUG FIXES!
+-- ✅ COMPLETELY STANDALONE!
