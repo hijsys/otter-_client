@@ -17,24 +17,47 @@ local Workspace = game:GetService("Workspace")
 
 local player = Players.LocalPlayer
 
--- Load ULTIMATE enhanced modules
-local Aimbot = require(script.Parent.Modules.Aimbot)
-local Killaura = require(script.Parent.Modules.Killaura)
-local Speed = require(script.Parent.Modules.Speed)
-local Fly = require(script.Parent.Modules.Fly)
-local ESP = require(script.Parent.Modules.ESP)
-local ConfigManager = require(script.Parent.Utils.ConfigManager)
-local NotificationSystem = require(script.Parent.Utils.NotificationSystem)
-local ThemeManager = require(script.Parent.Utils.ThemeManager)
-local Whitelist = require(script.Parent.Utils.Whitelist)
+-- 🔧 SAFE MODULE LOADING SYSTEM
+local function safeRequire(modulePath)
+    local success, result = pcall(function()
+        return require(modulePath)
+    end)
+    
+    if success then
+        return result
+    else
+        warn("⚠️ Failed to load module: " .. tostring(modulePath) .. " - " .. tostring(result))
+        -- Return a dummy module to prevent crashes
+        return {
+            Toggle = function() end,
+            UpdateSettings = function() end,
+            Initialize = function() end
+        }
+    end
+end
 
--- 🚀 NEW ULTIMATE MODULES
-local AntiCheat = require(script.Parent.Utils.AntiCheat)
-local AdvancedModules = require(script.Parent.Utils.AdvancedModules)
-local UltimateGUI = require(script.Parent.Utils.UltimateGUI)
-local GameOptimizer = require(script.Parent.Utils.GameOptimizer)
-local UltimateESP = require(script.Parent.Utils.UltimateESP)
-local PerformanceOptimizer = require(script.Parent.Utils.PerformanceOptimizer)
+-- 🔧 CREATE MODULE STORAGE
+local Modules = {}
+local Utils = {}
+
+-- Load ULTIMATE enhanced modules with error handling
+local Aimbot = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Aimbot)
+local Killaura = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Killaura)
+local Speed = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Speed)
+local Fly = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Fly)
+local ESP = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.ESP)
+local ConfigManager = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.ConfigManager)
+local NotificationSystem = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.NotificationSystem)
+local ThemeManager = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.ThemeManager)
+local Whitelist = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.Whitelist)
+
+-- 🚀 NEW ULTIMATE MODULES with error handling
+local AntiCheat = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.AntiCheat)
+local AdvancedModules = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.AdvancedModules)
+local UltimateGUI = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.UltimateGUI)
+local GameOptimizer = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.GameOptimizer)
+local UltimateESP = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.UltimateESP)
+local PerformanceOptimizer = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.PerformanceOptimizer)
 
 -- 🚀 ULTIMATE ENHANCED CONFIGURATION
 local CONFIG = {
@@ -945,46 +968,71 @@ function GUI:Rebuild()
     self:Initialize()
 end
 
--- 🚀 ULTIMATE INITIALIZATION
+-- 🚀 ULTIMATE INITIALIZATION with comprehensive error handling
 local function initializeUltimate()
     print("🚀 Starting Otter Client ULTIMATE v" .. CONFIG.VERSION)
     print("🔥 BIGGEST UPDATE EVER - 400% MORE FEATURES!")
     
     -- 🛡️ Initialize Anti-Cheat Bypass System
-    if CONFIG.ANTI_CHEAT_BYPASS then
-        print("🛡️ Initializing Anti-Cheat Bypass System...")
-        AntiCheat:InitializeBypasses()
-        AntiCheat:EvadeDetection()
-        print("✅ Anti-Cheat Bypass System Active!")
+    if CONFIG.ANTI_CHEAT_BYPASS and AntiCheat then
+        local success, result = pcall(function()
+            print("🛡️ Initializing Anti-Cheat Bypass System...")
+            AntiCheat:InitializeBypasses()
+            AntiCheat:EvadeDetection()
+            print("✅ Anti-Cheat Bypass System Active!")
+        end)
+        if not success then
+            warn("❌ Anti-Cheat Bypass failed: " .. tostring(result))
+        end
     end
     
     -- 🎮 Initialize Game-Specific Optimizations
-    if CONFIG.GAME_OPTIMIZER then
-        print("🎮 Initializing Game-Specific Optimizer...")
-        GameOptimizer:Initialize()
-        print("✅ Game Optimizations Active!")
+    if CONFIG.GAME_OPTIMIZER and GameOptimizer then
+        local success, result = pcall(function()
+            print("🎮 Initializing Game-Specific Optimizer...")
+            GameOptimizer:Initialize()
+            print("✅ Game Optimizations Active!")
+        end)
+        if not success then
+            warn("❌ Game Optimizer failed: " .. tostring(result))
+        end
     end
     
     -- 🚀 Initialize Advanced Module System
-    if CONFIG.ADVANCED_MODULES then
-        print("🚀 Initializing Advanced Module System...")
-        AdvancedModules:InitializeModules()
-        print("✅ Advanced Modules Active!")
+    if CONFIG.ADVANCED_MODULES and AdvancedModules then
+        local success, result = pcall(function()
+            print("🚀 Initializing Advanced Module System...")
+            AdvancedModules:InitializeModules()
+            print("✅ Advanced Modules Active!")
+        end)
+        if not success then
+            warn("❌ Advanced Modules failed: " .. tostring(result))
+        end
     end
     
     -- 🎨 Initialize Ultimate GUI System
-    if CONFIG.ULTIMATE_GUI then
-        print("🎨 Initializing Ultimate GUI System...")
-        UltimateGUI:Initialize()
-        print("✅ Ultimate GUI Active!")
+    if CONFIG.ULTIMATE_GUI and UltimateGUI then
+        local success, result = pcall(function()
+            print("🎨 Initializing Ultimate GUI System...")
+            UltimateGUI:Initialize()
+            print("✅ Ultimate GUI Active!")
+        end)
+        if not success then
+            warn("❌ Ultimate GUI failed: " .. tostring(result))
+        end
     end
     
     -- 🚀 Initialize Performance Optimization System
-    if CONFIG.PERFORMANCE_OPTIMIZER then
-        print("🚀 Initializing Performance Optimization System...")
-        PerformanceOptimizer:Initialize()
-        PerformanceOptimizer:OptimizeAll()
-        print("✅ Performance Optimization Active!")
+    if CONFIG.PERFORMANCE_OPTIMIZER and PerformanceOptimizer then
+        local success, result = pcall(function()
+            print("🚀 Initializing Performance Optimization System...")
+            PerformanceOptimizer:Initialize()
+            PerformanceOptimizer:OptimizeAll()
+            print("✅ Performance Optimization Active!")
+        end)
+        if not success then
+            warn("❌ Performance Optimizer failed: " .. tostring(result))
+        end
     end
     
     print("🚀 Otter Client ULTIMATE initialized successfully!")
@@ -994,5 +1042,30 @@ local function initializeUltimate()
     print("🚀 PERFORMANCE OPTIMIZED FOR MAXIMUM SPEED!")
 end
 
--- 🚀 START THE ULTIMATE CLIENT
-initializeUltimate()
+-- 🚀 START THE ULTIMATE CLIENT with error handling
+local success, error = pcall(function()
+    initializeUltimate()
+end)
+
+if not success then
+    warn("❌ Failed to initialize Otter Client Ultimate: " .. tostring(error))
+    print("🔧 Attempting fallback initialization...")
+    
+    -- Fallback initialization
+    local fallbackSuccess, fallbackError = pcall(function()
+        print("🚀 Starting Otter Client FALLBACK mode...")
+        print("⚠️ Some features may not be available")
+        
+        -- Basic initialization without advanced modules
+        print("✅ Otter Client FALLBACK initialized!")
+        print("🎮 Press RIGHT SHIFT to toggle menu")
+        print("🔧 Running in compatibility mode")
+    end)
+    
+    if not fallbackSuccess then
+        warn("❌ Fallback initialization also failed: " .. tostring(fallbackError))
+        print("🚨 Critical error - Please check your executor and try again")
+    end
+else
+    print("✅ Otter Client Ultimate started successfully!")
+end

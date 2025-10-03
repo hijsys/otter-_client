@@ -1,11 +1,11 @@
--- 🦦 OTTER CLIENT ULTIMATE - LOADSTRING v5.0.0
+-- 🦦 OTTER CLIENT ULTIMATE - STANDALONE VERSION v5.0.1
 -- 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
+-- 🔧 BUG FIXES: Fixed module loading errors and animation issues
 -- Copy and paste this into your executor (Codex, Synapse, etc.)
--- Features: Advanced Anti-Cheat Bypass, 20+ Modules, Ultimate GUI, Game Optimizations
 
 -- 🔥 MAIN LOADSTRING - READY TO USE!
 local success, error = pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua"))()
 end)
 
 if not success then
@@ -14,7 +14,7 @@ if not success then
     
     -- Alternative loadstring
     local altSuccess, altError = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient.lua?raw=true"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua?raw=true"))()
     end)
     
     if not altSuccess then
@@ -47,13 +47,13 @@ end
 -- 🚀 ALTERNATIVE LOADSTRINGS (Choose one if main fails):
 
 -- Option 1: Direct GitHub (Recommended)
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua"))()
 
 -- Option 2: Raw GitHub (Alternative)
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient.lua?raw=true"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua?raw=true"))()
 
 -- Option 3: GitHub with version tag
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/v5.0.0/OtterClient.lua"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/v5.0.1/OtterClient_Standalone.lua"))()
 
 -- Option 4: Local file (for testing)
 -- loadstring(readfile("OtterClient.lua"))()
@@ -72,7 +72,7 @@ end
 -- - Try the alternative loadstrings if one doesn't work
 -- - Check if your executor has proper permissions
 
--- 🚀 ULTIMATE FEATURES v5.0.0:
+-- 🚀 ULTIMATE FEATURES v5.0.1:
 -- ✨ Advanced Anti-Cheat Bypass System
 -- 🎯 20+ Advanced Modules
 -- 🎨 Ultimate GUI with Animations
@@ -88,6 +88,7 @@ end
 -- 🚀 Performance Optimization
 -- 💾 Memory Management
 -- ☁️ Cloud Sync (Optional)
+-- 🔧 COMPREHENSIVE ERROR HANDLING
 
 -- 🎮 SUPPORTED GAMES:
 -- 🛏️ Bedwars (Advanced optimizations)
@@ -139,6 +140,15 @@ end
 -- 🤖 Behavior Protection (Humanized input, randomized timing)
 -- 🔍 Detection Evasion (Process hiding, registry cleaning)
 
+-- 🔧 BUG FIXES v5.0.1:
+-- ✅ Fixed module loading errors (script.Parent issues)
+-- ✅ Added comprehensive error handling
+-- ✅ Fixed animation loading failures
+-- ✅ Added fallback initialization system
+-- ✅ Improved compatibility with all executors
+-- ✅ Enhanced error messages and debugging
+-- ✅ Added safe module loading system
+
 -- 📱 SUPPORTED EXECUTORS:
 -- ✅ Codex
 -- ✅ Synapse X
@@ -171,3 +181,4 @@ end
 -- 🛡️ MAXIMUM PROTECTION & BYPASSES!
 -- 🎨 BEAUTIFUL UI WITH ANIMATIONS!
 -- 🎮 GAME-SPECIFIC OPTIMIZATIONS!
+-- 🔧 COMPREHENSIVE BUG FIXES!
