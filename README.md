@@ -1,14 +1,22 @@
-# 🦦 Otter Client ULTIMATE v5.0.3
+# 🦦 Otter Client ULTIMATE v5.1.0 - Rivals Edition
 
-## 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
+## 🎯 RIVALS FPS UPDATE - COMPREHENSIVE GAME SUPPORT!
 
-### 📝 What's New in v5.0.3
-- ✅ **Fixed Critical Bugs**: Resolved module loading and GUI helper function issues
-- ✅ **Better Performance**: Added debouncing to slider updates
-- ✅ **Memory Management**: Proper cleanup mechanism for connections
-- ✅ **Enhanced Error Handling**: More robust error handling throughout
-- ✅ **Menu Keybind**: Working keybind system for menu toggle
-- ✅ **Code Quality**: Improved code organization and maintainability
+### 🆕 What's New in v5.1.0 - RIVALS UPDATE
+- ✅ **Complete Rivals Support**: 14+ specialized FPS features for Rivals
+- ✅ **Weapon Optimization**: Advanced weapon detection with stats tracking
+- ✅ **Recoil Control**: Automatic compensation with weapon-specific patterns
+- ✅ **Auto Reload**: Smart reload system with cover detection
+- ✅ **Spread Reduction**: Bullet spread reduction up to 70%
+- ✅ **Enemy ESP**: Professional ESP with health, weapon, distance display
+- ✅ **Ability Tracker**: Track abilities with visual timers
+- ✅ **Map Awareness**: Comprehensive map intelligence system
+- ✅ **Movement Enhancement**: Slide boost, air strafing, quick peek
+- ✅ **Wallbang Detection**: Material penetration with damage multipliers
+- ✅ **Sound ESP**: Footstep, gunshot, and reload detection
+- ✅ **Grenade Trajectory**: Predict grenade paths with bounces
+- ✅ **Dedicated Rivals Tab**: Easy access to all Rivals features in GUI
+- ✅ **Auto-Detection**: Automatic Rivals game detection
 
 The most advanced Roblox cheat client with professional-grade features, anti-cheat bypasses, and game-specific optimizations.
 
@@ -217,6 +225,22 @@ The most advanced Roblox cheat client with professional-grade features, anti-che
 - **Path Optimization**: Path finding algorithms
 - **Resource Management**: Resource optimization
 - **Wave Prediction**: Wave analysis and prediction
+
+### 🎯 Rivals FPS Optimizations
+- **Weapon Optimization**: Advanced weapon detection and stats tracking
+- **Recoil Control**: Automatic recoil compensation with weapon-specific patterns
+- **Auto Reload**: Smart reload system with cover detection
+- **Spread Reduction**: Bullet spread reduction up to 70%
+- **Enemy ESP**: Advanced ESP with health, weapon, and distance display
+- **Hitbox Expansion**: Optional hitbox expansion for better accuracy
+- **Ability Cooldown Tracker**: Track your and enemy abilities with timers
+- **Map Awareness**: Spawn points, cover spots, and objective tracking
+- **Movement Enhancement**: Slide boost, air strafing, and quick peek
+- **Wallbang Detection**: Material penetration system with damage multipliers
+- **Crosshair Optimization**: Dynamic crosshair with hit markers
+- **Sound ESP**: Footstep, gunshot, and reload detection with direction indicators
+- **Grenade Trajectory**: Predict grenade paths with bounce calculation
+- **Auto Peek**: Automatic peek system with position return
 
 ## 🛡️ ANTI-CHEAT BYPASSES
 

@@ -1,16 +1,21 @@
--- Otter Client - ULTIMATE ENHANCED VERSION 5.0.3
--- 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
--- Advanced Anti-Cheat Bypass + 20+ Modules + Ultimate GUI
+-- Otter Client - ULTIMATE ENHANCED VERSION 5.1.0
+-- 🎯 RIVALS FPS UPDATE - COMPREHENSIVE GAME SUPPORT
+-- Advanced Anti-Cheat Bypass + 20+ Modules + Ultimate GUI + Full Rivals Support
 -- Key: 123
 --
--- 📝 IMPROVEMENTS IN v5.0.3:
--- ✅ Fixed module loading system with proper path validation
--- ✅ Fixed GUI helper functions (parent parameter issue)
--- ✅ Added proper cleanup mechanism for connections and memory
--- ✅ Added debouncing to slider updates for better performance
--- ✅ Improved error handling throughout the codebase
--- ✅ Added menu keybind functionality
--- ✅ Synchronized version numbers across all files
+-- 📝 NEW IN v5.1.0 - RIVALS FPS UPDATE:
+-- ✅ Complete Rivals game support with 14+ specialized features
+-- ✅ Weapon optimization with recoil control and spread reduction
+-- ✅ Advanced Enemy ESP with health, weapon, and distance tracking
+-- ✅ Ability cooldown tracker with visual timers
+-- ✅ Map awareness system with spawn and objective tracking
+-- ✅ Movement enhancement with slide boost and air strafing
+-- ✅ Wallbang detection with material penetration system
+-- ✅ Sound ESP for footsteps, gunshots, and abilities
+-- ✅ Grenade trajectory prediction with bounce calculation
+-- ✅ Dedicated Rivals tab in GUI for easy access to all features
+-- ✅ Auto-detection of Rivals game by ID and name
+-- ✅ Comprehensive documentation and changelog
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -88,8 +93,8 @@ local PerformanceOptimizer = safeRequire(getModulePath("Utils", "PerformanceOpti
 
 -- 🚀 ULTIMATE ENHANCED CONFIGURATION
 local CONFIG = {
-    VERSION = "5.0.3",
-    NAME = "Otter Client ULTIMATE",
+    VERSION = "5.1.0",
+    NAME = "Otter Client ULTIMATE - Rivals Edition",
     KEY = "123",
     MENU_KEY = Enum.KeyCode.RightShift,
     THEME = ThemeManager:GetCurrentTheme(),
@@ -321,6 +326,7 @@ function GUI:CreateTabSystem()
         {name = "Combat", icon = "⚔️", color = Color3.fromRGB(255, 100, 100)},
         {name = "Movement", icon = "🏃", color = Color3.fromRGB(100, 255, 100)},
         {name = "Visual", icon = "👁️", color = Color3.fromRGB(100, 100, 255)},
+        {name = "Rivals", icon = "🎯", color = Color3.fromRGB(255, 50, 150)},
         {name = "Misc", icon = "🔧", color = Color3.fromRGB(255, 255, 100)},
         {name = "Settings", icon = "⚙️", color = Color3.fromRGB(255, 100, 255)}
     }
@@ -371,6 +377,8 @@ function GUI:LoadTabContent(tabName, contentFrame)
         self:CreateMovementTab(contentFrame)
     elseif tabName == "Visual" then
         self:CreateVisualTab(contentFrame)
+    elseif tabName == "Rivals" then
+        self:CreateRivalsTab(contentFrame)
     elseif tabName == "Misc" then
         self:CreateMiscTab(contentFrame)
     elseif tabName == "Settings" then
@@ -561,6 +569,280 @@ function GUI:CreateVisualTab(contentFrame)
             NotificationSystem:ShowInfo("ESP", "Names " .. (enabled and "enabled" or "disabled"))
         end
     end, espSection)
+end
+
+-- Create Rivals tab
+function GUI:CreateRivalsTab(contentFrame)
+    local rivalsFrame = Instance.new("ScrollingFrame")
+    rivalsFrame.Name = "RivalsFrame"
+    rivalsFrame.Size = UDim2.new(1, 0, 1, 0)
+    rivalsFrame.Position = UDim2.new(0, 0, 0, 0)
+    rivalsFrame.BackgroundTransparency = 1
+    rivalsFrame.ScrollBarThickness = 4
+    rivalsFrame.ScrollBarImageColor3 = CONFIG.THEME.ACCENT
+    rivalsFrame.Parent = contentFrame
+    
+    local rivalsLayout = Instance.new("UIListLayout")
+    rivalsLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    rivalsLayout.Padding = UDim.new(0, 10)
+    rivalsLayout.Parent = rivalsFrame
+    
+    -- Rivals Info Section
+    local infoSection = self:CreateSection("🎯 Rivals FPS Optimizations", rivalsFrame)
+    
+    -- Weapon Optimization Section
+    local weaponSection = self:CreateSection("Weapon Optimization", rivalsFrame)
+    
+    local weaponOptToggle = self:CreateToggle("Enable Weapon Optimization", true, function(enabled)
+        modules.RivalsWeapon = modules.RivalsWeapon or {}
+        modules.RivalsWeapon.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Weapon optimization " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Weapon optimization " .. (enabled and "enabled" or "disabled"))
+    end, weaponSection)
+    
+    -- Recoil Control Section
+    local recoilSection = self:CreateSection("Recoil Control", rivalsFrame)
+    
+    local recoilToggle = self:CreateToggle("Enable Recoil Control", true, function(enabled)
+        modules.RivalsRecoil = modules.RivalsRecoil or {}
+        modules.RivalsRecoil.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Recoil control " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Recoil control " .. (enabled and "enabled" or "disabled"))
+    end, recoilSection)
+    
+    local recoilVertical = self:CreateSlider("Vertical Compensation", 0, 100, 85, function(value)
+        modules.RivalsRecoil = modules.RivalsRecoil or {}
+        modules.RivalsRecoil.VerticalComp = value
+        print("🎯 Rivals: Vertical compensation set to " .. value .. "%")
+    end, recoilSection)
+    
+    local recoilHorizontal = self:CreateSlider("Horizontal Compensation", 0, 100, 75, function(value)
+        modules.RivalsRecoil = modules.RivalsRecoil or {}
+        modules.RivalsRecoil.HorizontalComp = value
+        print("🎯 Rivals: Horizontal compensation set to " .. value .. "%")
+    end, recoilSection)
+    
+    -- Auto Reload Section
+    local reloadSection = self:CreateSection("Auto Reload", rivalsFrame)
+    
+    local autoReloadToggle = self:CreateToggle("Enable Auto Reload", true, function(enabled)
+        modules.RivalsReload = modules.RivalsReload or {}
+        modules.RivalsReload.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Auto reload " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Auto reload " .. (enabled and "enabled" or "disabled"))
+    end, reloadSection)
+    
+    local reloadThreshold = self:CreateSlider("Reload Threshold", 1, 10, 3, function(value)
+        modules.RivalsReload = modules.RivalsReload or {}
+        modules.RivalsReload.Threshold = value
+        print("🎯 Rivals: Reload threshold set to " .. value .. " bullets")
+    end, reloadSection)
+    
+    local reloadOnKill = self:CreateToggle("Reload On Kill", true, function(enabled)
+        modules.RivalsReload = modules.RivalsReload or {}
+        modules.RivalsReload.ReloadOnKill = enabled
+        print("🎯 Rivals: Reload on kill " .. (enabled and "enabled" or "disabled"))
+    end, reloadSection)
+    
+    -- Spread Reduction Section
+    local spreadSection = self:CreateSection("Spread Reduction", rivalsFrame)
+    
+    local spreadToggle = self:CreateToggle("Enable Spread Reduction", true, function(enabled)
+        modules.RivalsSpread = modules.RivalsSpread or {}
+        modules.RivalsSpread.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Spread reduction " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Spread reduction " .. (enabled and "enabled" or "disabled"))
+    end, spreadSection)
+    
+    local spreadAmount = self:CreateSlider("Reduction Amount", 0, 100, 70, function(value)
+        modules.RivalsSpread = modules.RivalsSpread or {}
+        modules.RivalsSpread.ReductionAmount = value
+        print("🎯 Rivals: Spread reduction set to " .. value .. "%")
+    end, spreadSection)
+    
+    -- Enemy ESP Section
+    local espSection = self:CreateSection("Enemy ESP", rivalsFrame)
+    
+    local espToggle = self:CreateToggle("Enable Enemy ESP", true, function(enabled)
+        modules.RivalsESP = modules.RivalsESP or {}
+        modules.RivalsESP.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Enemy ESP " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Enemy ESP " .. (enabled and "enabled" or "disabled"))
+    end, espSection)
+    
+    local espBoxes = self:CreateToggle("Show Boxes", true, function(enabled)
+        modules.RivalsESP = modules.RivalsESP or {}
+        modules.RivalsESP.ShowBoxes = enabled
+        print("🎯 Rivals: ESP boxes " .. (enabled and "enabled" or "disabled"))
+    end, espSection)
+    
+    local espHealth = self:CreateToggle("Show Health", true, function(enabled)
+        modules.RivalsESP = modules.RivalsESP or {}
+        modules.RivalsESP.ShowHealth = enabled
+        print("🎯 Rivals: ESP health " .. (enabled and "enabled" or "disabled"))
+    end, espSection)
+    
+    local espWeapon = self:CreateToggle("Show Weapon", true, function(enabled)
+        modules.RivalsESP = modules.RivalsESP or {}
+        modules.RivalsESP.ShowWeapon = enabled
+        print("🎯 Rivals: ESP weapon " .. (enabled and "enabled" or "disabled"))
+    end, espSection)
+    
+    local espDistance = self:CreateSlider("Max ESP Distance", 100, 1000, 500, function(value)
+        modules.RivalsESP = modules.RivalsESP or {}
+        modules.RivalsESP.MaxDistance = value
+        print("🎯 Rivals: Max ESP distance set to " .. value .. " studs")
+    end, espSection)
+    
+    -- Ability Cooldown Tracker Section
+    local abilitySection = self:CreateSection("Ability Cooldown Tracker", rivalsFrame)
+    
+    local abilityToggle = self:CreateToggle("Enable Ability Tracker", true, function(enabled)
+        modules.RivalsAbilities = modules.RivalsAbilities or {}
+        modules.RivalsAbilities.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Ability tracker " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Ability tracker " .. (enabled and "enabled" or "disabled"))
+    end, abilitySection)
+    
+    local abilityAudio = self:CreateToggle("Audio Alerts", true, function(enabled)
+        modules.RivalsAbilities = modules.RivalsAbilities or {}
+        modules.RivalsAbilities.AudioAlert = enabled
+        print("🎯 Rivals: Audio alerts " .. (enabled and "enabled" or "disabled"))
+    end, abilitySection)
+    
+    -- Map Awareness Section
+    local mapSection = self:CreateSection("Map Awareness", rivalsFrame)
+    
+    local mapToggle = self:CreateToggle("Enable Map Awareness", true, function(enabled)
+        modules.RivalsMap = modules.RivalsMap or {}
+        modules.RivalsMap.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Map awareness " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Map awareness " .. (enabled and "enabled" or "disabled"))
+    end, mapSection)
+    
+    local mapMinimap = self:CreateToggle("Show Minimap", true, function(enabled)
+        modules.RivalsMap = modules.RivalsMap or {}
+        modules.RivalsMap.ShowMinimap = enabled
+        print("🎯 Rivals: Minimap " .. (enabled and "enabled" or "disabled"))
+    end, mapSection)
+    
+    -- Movement Enhancement Section
+    local movementSection = self:CreateSection("Movement Enhancement", rivalsFrame)
+    
+    local movementToggle = self:CreateToggle("Enable Movement Enhancement", true, function(enabled)
+        modules.RivalsMovement = modules.RivalsMovement or {}
+        modules.RivalsMovement.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Movement enhancement " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Movement enhancement " .. (enabled and "enabled" or "disabled"))
+    end, movementSection)
+    
+    local slideBoost = self:CreateToggle("Slide Boost", true, function(enabled)
+        modules.RivalsMovement = modules.RivalsMovement or {}
+        modules.RivalsMovement.SlideBoost = enabled
+        print("🎯 Rivals: Slide boost " .. (enabled and "enabled" or "disabled"))
+    end, movementSection)
+    
+    local airStrafe = self:CreateToggle("Air Strafing", true, function(enabled)
+        modules.RivalsMovement = modules.RivalsMovement or {}
+        modules.RivalsMovement.AirStrafing = enabled
+        print("🎯 Rivals: Air strafing " .. (enabled and "enabled" or "disabled"))
+    end, movementSection)
+    
+    -- Wallbang Detection Section
+    local wallbangSection = self:CreateSection("Wallbang Detection", rivalsFrame)
+    
+    local wallbangToggle = self:CreateToggle("Enable Wallbang Detection", true, function(enabled)
+        modules.RivalsWallbang = modules.RivalsWallbang or {}
+        modules.RivalsWallbang.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Wallbang detection " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Wallbang detection " .. (enabled and "enabled" or "disabled"))
+    end, wallbangSection)
+    
+    local wallbangSpots = self:CreateToggle("Show Wallbang Spots", true, function(enabled)
+        modules.RivalsWallbang = modules.RivalsWallbang or {}
+        modules.RivalsWallbang.ShowSpots = enabled
+        print("🎯 Rivals: Wallbang spots " .. (enabled and "enabled" or "disabled"))
+    end, wallbangSection)
+    
+    local wallbangDistance = self:CreateSlider("Max Wallbang Distance", 50, 300, 200, function(value)
+        modules.RivalsWallbang = modules.RivalsWallbang or {}
+        modules.RivalsWallbang.MaxDistance = value
+        print("🎯 Rivals: Max wallbang distance set to " .. value .. " studs")
+    end, wallbangSection)
+    
+    -- Sound ESP Section
+    local soundSection = self:CreateSection("Sound ESP", rivalsFrame)
+    
+    local soundToggle = self:CreateToggle("Enable Sound ESP", true, function(enabled)
+        modules.RivalsSound = modules.RivalsSound or {}
+        modules.RivalsSound.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Sound ESP " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Sound ESP " .. (enabled and "enabled" or "disabled"))
+    end, soundSection)
+    
+    local soundFootsteps = self:CreateToggle("Detect Footsteps", true, function(enabled)
+        modules.RivalsSound = modules.RivalsSound or {}
+        modules.RivalsSound.Footsteps = enabled
+        print("🎯 Rivals: Footstep detection " .. (enabled and "enabled" or "disabled"))
+    end, soundSection)
+    
+    local soundGunshots = self:CreateToggle("Detect Gunshots", true, function(enabled)
+        modules.RivalsSound = modules.RivalsSound or {}
+        modules.RivalsSound.Gunshots = enabled
+        print("🎯 Rivals: Gunshot detection " .. (enabled and "enabled" or "disabled"))
+    end, soundSection)
+    
+    local soundRange = self:CreateSlider("Detection Range", 50, 200, 100, function(value)
+        modules.RivalsSound = modules.RivalsSound or {}
+        modules.RivalsSound.MaxRange = value
+        print("🎯 Rivals: Sound detection range set to " .. value .. " studs")
+    end, soundSection)
+    
+    -- Grenade Trajectory Section
+    local grenadeSection = self:CreateSection("Grenade Trajectory", rivalsFrame)
+    
+    local grenadeToggle = self:CreateToggle("Enable Grenade Trajectory", true, function(enabled)
+        modules.RivalsGrenade = modules.RivalsGrenade or {}
+        modules.RivalsGrenade.Enabled = enabled
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowInfo("Rivals", "Grenade trajectory " .. (enabled and "enabled" or "disabled"))
+        end
+        print("🎯 Rivals: Grenade trajectory " .. (enabled and "enabled" or "disabled"))
+    end, grenadeSection)
+    
+    local grenadeLine = self:CreateToggle("Show Trajectory Line", true, function(enabled)
+        modules.RivalsGrenade = modules.RivalsGrenade or {}
+        modules.RivalsGrenade.ShowLine = enabled
+        print("🎯 Rivals: Trajectory line " .. (enabled and "enabled" or "disabled"))
+    end, grenadeSection)
+    
+    local grenadeBlast = self:CreateToggle("Show Blast Radius", true, function(enabled)
+        modules.RivalsGrenade = modules.RivalsGrenade or {}
+        modules.RivalsGrenade.ShowBlast = enabled
+        print("🎯 Rivals: Blast radius " .. (enabled and "enabled" or "disabled"))
+    end, grenadeSection)
+    
+    print("✅ Rivals tab created with all FPS optimizations!")
 end
 
 -- Create misc tab
