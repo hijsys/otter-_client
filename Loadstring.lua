@@ -1,8 +1,8 @@
--- 🦦 OTTER CLIENT ULTIMATE - LOADSTRING v5.0.2
--- 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
--- 🔧 BUG FIXES: Completely standalone, no external dependencies
--- Copy and paste this into your executor (Codex, Synapse, etc.)
--- Features: Advanced Anti-Cheat Bypass, 20+ Modules, Ultimate GUI, Game Optimizations
+-- 🦦 OTTER CLIENT - RIVALS & BEDWARS EDITION v6.0.0
+-- 🎮 THE ULTIMATE UPDATE - RIVALS DOMINATION + BEDWARS MASTERY!
+-- ⚔️ COMPLETE RIVALS MODULE + ENHANCED BEDWARS
+-- Copy and paste this into your executor (Codex, Synapse, KRNL, etc.)
+-- Key: 123
 
 -- 🔥 MAIN LOADSTRING - READY TO USE!
 local success, error = pcall(function()
@@ -73,32 +73,47 @@ end
 -- - Try the alternative loadstrings if one doesn't work
 -- - Check if your executor has proper permissions
 
--- 🚀 ULTIMATE FEATURES v5.0.2:
--- ✨ Advanced Anti-Cheat Bypass System
--- 🎯 20+ Advanced Modules
--- 🎨 Ultimate GUI with Animations
--- 🎮 Game-Specific Optimizations
--- 👁️ Advanced ESP with 3D Boxes
--- 🛡️ Memory Protection
--- 🔒 Execution Protection
--- 🌐 Network Protection
--- 🤖 Behavior Protection
--- 🎵 Sound Effects System
--- ✨ Particle Effects
--- 🎨 Shadow Effects
--- 🚀 Performance Optimization
--- 💾 Memory Management
--- ☁️ Cloud Sync (Optional)
--- 🔧 COMPREHENSIVE ERROR HANDLING
+-- 🚀 ULTIMATE FEATURES v6.0.0 - RIVALS & BEDWARS EDITION:
+
+-- 🎮 RIVALS MODULE (THE STAR OF THE SHOW!):
+-- ⚔️ Advanced Aimbot with 3 Prediction Modes
+-- 👁️ Full ESP System (Boxes, Tracers, Names, Health, Distance)
+-- 🎯 Auto-Parry with Perfect Timing
+-- 💫 Kill Aura with Smart Targeting
+-- 🎯 Hitbox Expander + Visualization
+-- 👻 Silent Aim & Aim Assist
+-- 🏃 Movement (Speed, Fly, Infinite Jump, No Clip)
+-- 🎨 Visuals (Fullbright, FOV Changer, Crosshair)
+-- 📊 Stats Tracking (Kills, Deaths, K/D, Accuracy)
+-- 🔥 Combat (Auto-Dodge, Anti-Ragdoll, Instant Respawn)
+
+-- 🛏️ BEDWARS MODULE (COMPLETE DOMINANCE!):
+-- 🛏️ Bed ESP with Team Colors
+-- 🌉 Auto-Bridge System
+-- 💎 Resource ESP (Diamonds, Emeralds, Iron, Gold)
+-- ⚒️ Generator ESP with Timers
+-- 🛡️ Auto-Defense System
+-- 🎒 Smart Inventory Management
+-- 🏃 Speed Bridging (Normal, Ninja, God modes)
+-- 💰 Auto-Mining for Resources
+-- 🚨 Smart Alert System
+
+-- ✨ CORE FEATURES:
+-- 🎨 Beautiful Ultimate GUI
+-- 🛡️ Advanced Anti-Cheat Bypass
+-- 🎯 20+ Combat Modules
+-- 🚀 Performance Optimized
+-- 💾 Smart Memory Management
+-- 🔧 Comprehensive Error Handling
 -- ✅ COMPLETELY STANDALONE
 
 -- 🎮 SUPPORTED GAMES:
--- 🛏️ Bedwars (Advanced optimizations)
--- 🔫 Arsenal (Weapon detection, map awareness)
--- 🚔 Jailbreak (Cop detection, escape routes)
--- 🏰 Adopt Me (Pet detection, house optimization)
--- 🎯 Tower Defense (Tower placement, enemy tracking)
--- 🎮 And many more!
+-- 🎮 RIVALS (Full support - GO ALL OUT!)
+-- 🛏️ Bedwars (Enhanced support)
+-- 🔫 Arsenal
+-- 🚔 Jailbreak  
+-- 🏰 Adopt Me
+-- 🎯 And many more!
 
 -- 🎯 COMBAT MODULES:
 -- 🎯 Advanced Aimbot (Silent aim, prediction)

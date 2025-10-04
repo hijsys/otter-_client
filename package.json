@@ -1,7 +1,7 @@
 {
-  "name": "otter-client-enhanced",
-  "version": "5.0.3",
-  "description": "Ultimate Roblox Bedwars Client - Enhanced with Advanced Modules",
+  "name": "otter-client-rivals-bedwars",
+  "version": "6.0.0",
+  "description": "Ultimate Roblox Rivals & Bedwars Client - Complete Rivals Module + Enhanced Bedwars",
   "main": "OtterClient.lua",
   "scripts": {
     "start": "echo 'Otter Client Enhanced - Load the loadstring in your executor!'",
@@ -9,15 +9,19 @@
   },
   "keywords": [
     "roblox",
+    "rivals",
     "bedwars",
     "client",
-    "hack",
+    "cheat",
     "exploit",
     "aimbot",
-    "killaura",
     "esp",
+    "auto-parry",
+    "hitbox",
+    "killaura",
     "speed",
-    "fly"
+    "fly",
+    "silent-aim"
   ],
   "author": "Otter Client Team",
   "license": "MIT",

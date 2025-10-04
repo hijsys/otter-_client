@@ -1,16 +1,38 @@
--- Otter Client - ULTIMATE ENHANCED VERSION 5.0.3
--- 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
--- Advanced Anti-Cheat Bypass + 20+ Modules + Ultimate GUI
+-- Otter Client - RIVALS & BEDWARS EDITION v6.0.0
+-- 🎮 THE ULTIMATE UPDATE - RIVALS DOMINATION! 
+-- ⚔️ COMPLETE RIVALS SUPPORT + BEDWARS MASTERY
 -- Key: 123
 --
--- 📝 IMPROVEMENTS IN v5.0.3:
--- ✅ Fixed module loading system with proper path validation
--- ✅ Fixed GUI helper functions (parent parameter issue)
--- ✅ Added proper cleanup mechanism for connections and memory
--- ✅ Added debouncing to slider updates for better performance
--- ✅ Improved error handling throughout the codebase
--- ✅ Added menu keybind functionality
--- ✅ Synchronized version numbers across all files
+-- 🎮 NEW IN v6.0.0 - RIVALS EDITION:
+-- 🔥 COMPREHENSIVE RIVALS MODULE:
+--    ✅ Advanced Aimbot with 3 prediction modes (Simple, Advanced, Ultra)
+--    ✅ Full ESP System (Boxes, Tracers, Names, Health, Distance, Weapons)
+--    ✅ Auto-Parry System with perfect timing
+--    ✅ Hitbox Expander with visualization
+--    ✅ Kill Aura with smart targeting
+--    ✅ Silent Aim & Aim Assist
+--    ✅ FOV Circle with customization
+--    ✅ Movement (Speed, Fly, Infinite Jump, No Clip)
+--    ✅ Visual Enhancements (Fullbright, FOV Changer, Crosshair)
+--    ✅ Stats Tracking (Kills, Deaths, K/D, Accuracy)
+--    ✅ Combat Features (Auto-Dodge, Anti-Ragdoll, Instant Respawn)
+--
+-- 🛏️ ENHANCED BEDWARS MODULE:
+--    ✅ Bed ESP with team colors
+--    ✅ Auto-Bridge system
+--    ✅ Resource ESP (Diamonds, Emeralds, Iron, Gold)
+--    ✅ Generator ESP with timers
+--    ✅ Auto-Defense system
+--    ✅ Inventory Management
+--    ✅ Speed Bridging modes (Normal, Ninja, God)
+--    ✅ Auto-Mining for resources
+--    ✅ Smart Alerts system
+--
+-- 📝 PREVIOUS IMPROVEMENTS (v5.0.3):
+-- ✅ Fixed module loading system
+-- ✅ Fixed GUI helper functions
+-- ✅ Proper memory management
+-- ✅ Performance optimizations
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -67,6 +89,10 @@ local function getModulePath(folder, moduleName)
     return nil
 end
 
+-- 🎮 GAME-SPECIFIC MODULES (v6.0.0 - RIVALS & BEDWARS EDITION)
+local RivalsModule = safeRequire(getModulePath("Modules", "Rivals"))
+local BedwarsModule = safeRequire(getModulePath("Modules", "Bedwars"))
+
 -- Load ULTIMATE enhanced modules with error handling
 local Aimbot = safeRequire(getModulePath("Modules", "Aimbot"))
 local Killaura = safeRequire(getModulePath("Modules", "Killaura"))
@@ -78,7 +104,7 @@ local NotificationSystem = safeRequire(getModulePath("Utils", "NotificationSyste
 local ThemeManager = safeRequire(getModulePath("Utils", "ThemeManager"))
 local Whitelist = safeRequire(getModulePath("Utils", "Whitelist"))
 
--- 🚀 NEW ULTIMATE MODULES with error handling
+-- 🚀 ULTIMATE MODULES with error handling
 local AntiCheat = safeRequire(getModulePath("Utils", "AntiCheat"))
 local AdvancedModules = safeRequire(getModulePath("Utils", "AdvancedModules"))
 local UltimateGUI = safeRequire(getModulePath("Utils", "UltimateGUI"))
@@ -88,8 +114,8 @@ local PerformanceOptimizer = safeRequire(getModulePath("Utils", "PerformanceOpti
 
 -- 🚀 ULTIMATE ENHANCED CONFIGURATION
 local CONFIG = {
-    VERSION = "5.0.3",
-    NAME = "Otter Client ULTIMATE",
+    VERSION = "6.0.0",
+    NAME = "Otter Client - Rivals & Bedwars Edition",
     KEY = "123",
     MENU_KEY = Enum.KeyCode.RightShift,
     THEME = ThemeManager:GetCurrentTheme(),
@@ -318,6 +344,8 @@ function GUI:CreateTabSystem()
     contentFrame.Parent = mainFrame
     
     local tabs = {
+        {name = "Rivals", icon = "🎮", color = Color3.fromRGB(255, 50, 50)},
+        {name = "Bedwars", icon = "🛏️", color = Color3.fromRGB(100, 200, 255)},
         {name = "Combat", icon = "⚔️", color = Color3.fromRGB(255, 100, 100)},
         {name = "Movement", icon = "🏃", color = Color3.fromRGB(100, 255, 100)},
         {name = "Visual", icon = "👁️", color = Color3.fromRGB(100, 100, 255)},
@@ -365,7 +393,11 @@ end
 
 -- Load tab content
 function GUI:LoadTabContent(tabName, contentFrame)
-    if tabName == "Combat" then
+    if tabName == "Rivals" then
+        self:CreateRivalsTab(contentFrame)
+    elseif tabName == "Bedwars" then
+        self:CreateBedwarsTab(contentFrame)
+    elseif tabName == "Combat" then
         self:CreateCombatTab(contentFrame)
     elseif tabName == "Movement" then
         self:CreateMovementTab(contentFrame)
@@ -376,6 +408,321 @@ function GUI:LoadTabContent(tabName, contentFrame)
     elseif tabName == "Settings" then
         self:CreateSettingsTab(contentFrame)
     end
+end
+
+-- 🎮 Create Rivals Tab (NEW v6.0.0)
+function GUI:CreateRivalsTab(contentFrame)
+    local rivalsFrame = Instance.new("ScrollingFrame")
+    rivalsFrame.Name = "RivalsFrame"
+    rivalsFrame.Size = UDim2.new(1, 0, 1, 0)
+    rivalsFrame.Position = UDim2.new(0, 0, 0, 0)
+    rivalsFrame.BackgroundTransparency = 1
+    rivalsFrame.ScrollBarThickness = 4
+    rivalsFrame.ScrollBarImageColor3 = CONFIG.THEME.ACCENT
+    rivalsFrame.Parent = contentFrame
+    
+    local rivalsLayout = Instance.new("UIListLayout")
+    rivalsLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    rivalsLayout.Padding = UDim.new(0, 10)
+    rivalsLayout.Parent = rivalsFrame
+    
+    -- Main Toggle
+    local mainSection = self:CreateSection("🎮 Rivals Module", rivalsFrame)
+    local mainToggle = self:CreateToggle("Enable Rivals Module", false, function(enabled)
+        RivalsModule:Toggle(enabled)
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowSuccess("Rivals", "Rivals Module " .. (enabled and "activated! Go dominate! 🔥" or "deactivated"))
+        end
+    end, mainSection)
+    
+    -- Aimbot Section
+    local aimbotSection = self:CreateSection("🎯 Aimbot", rivalsFrame)
+    
+    self:CreateToggle("Enable Aimbot", false, function(enabled)
+        RivalsModule:UpdateSettings({Aimbot = {Enabled = enabled}})
+    end, aimbotSection)
+    
+    self:CreateSlider("FOV", 0, 500, 120, function(value)
+        RivalsModule:UpdateSettings({Aimbot = {FOV = value}})
+    end, aimbotSection)
+    
+    self:CreateSlider("Smoothing", 1, 50, 15, function(value)
+        RivalsModule:UpdateSettings({Aimbot = {Smoothing = value}})
+    end, aimbotSection)
+    
+    self:CreateSlider("Prediction", 0, 1, 0.135, function(value)
+        RivalsModule:UpdateSettings({Aimbot = {Prediction = value}})
+    end, aimbotSection)
+    
+    self:CreateToggle("Silent Aim", true, function(enabled)
+        RivalsModule:UpdateSettings({Aimbot = {SilentAim = enabled}})
+    end, aimbotSection)
+    
+    self:CreateToggle("Show FOV Circle", true, function(enabled)
+        RivalsModule:UpdateSettings({Aimbot = {ShowFOV = enabled}})
+    end, aimbotSection)
+    
+    -- ESP Section
+    local espSection = self:CreateSection("👁️ ESP", rivalsFrame)
+    
+    self:CreateToggle("Enable ESP", false, function(enabled)
+        RivalsModule:UpdateSettings({ESP = {Enabled = enabled}})
+    end, espSection)
+    
+    self:CreateToggle("Boxes", true, function(enabled)
+        RivalsModule:UpdateSettings({ESP = {Boxes = enabled}})
+    end, espSection)
+    
+    self:CreateToggle("Tracers", true, function(enabled)
+        RivalsModule:UpdateSettings({ESP = {Tracers = enabled}})
+    end, espSection)
+    
+    self:CreateToggle("Names", true, function(enabled)
+        RivalsModule:UpdateSettings({ESP = {Names = enabled}})
+    end, espSection)
+    
+    self:CreateToggle("Health", true, function(enabled)
+        RivalsModule:UpdateSettings({ESP = {Health = enabled}})
+    end, espSection)
+    
+    self:CreateToggle("Distance", true, function(enabled)
+        RivalsModule:UpdateSettings({ESP = {Distance = enabled}})
+    end, espSection)
+    
+    -- Combat Section
+    local combatSection = self:CreateSection("⚔️ Combat", rivalsFrame)
+    
+    self:CreateToggle("Auto Parry", false, function(enabled)
+        RivalsModule:UpdateSettings({Combat = {AutoParry = enabled}})
+    end, combatSection)
+    
+    self:CreateSlider("Parry Timing", 0, 0.5, 0.15, function(value)
+        RivalsModule:UpdateSettings({Combat = {ParryTiming = value}})
+    end, combatSection)
+    
+    self:CreateToggle("Perfect Parry", false, function(enabled)
+        RivalsModule:UpdateSettings({Combat = {PerfectParry = enabled}})
+    end, combatSection)
+    
+    -- Kill Aura Section
+    local killauraSection = self:CreateSection("💫 Kill Aura", rivalsFrame)
+    
+    self:CreateToggle("Enable Kill Aura", false, function(enabled)
+        RivalsModule:UpdateSettings({Killaura = {Enabled = enabled}})
+    end, killauraSection)
+    
+    self:CreateSlider("Range", 0, 50, 20, function(value)
+        RivalsModule:UpdateSettings({Killaura = {Range = value}})
+    end, killauraSection)
+    
+    self:CreateSlider("Attack Delay", 0, 0.5, 0.05, function(value)
+        RivalsModule:UpdateSettings({Killaura = {AttackDelay = value}})
+    end, killauraSection)
+    
+    -- Movement Section
+    local movementSection = self:CreateSection("🏃 Movement", rivalsFrame)
+    
+    self:CreateToggle("Speed", false, function(enabled)
+        RivalsModule:UpdateSettings({Movement = {Speed = enabled}})
+    end, movementSection)
+    
+    self:CreateSlider("Speed Value", 16, 100, 25, function(value)
+        RivalsModule:UpdateSettings({Movement = {SpeedValue = value}})
+    end, movementSection)
+    
+    self:CreateToggle("Fly", false, function(enabled)
+        RivalsModule:UpdateSettings({Movement = {Fly = enabled}})
+    end, movementSection)
+    
+    self:CreateSlider("Fly Speed", 10, 150, 50, function(value)
+        RivalsModule:UpdateSettings({Movement = {FlySpeed = value}})
+    end, movementSection)
+    
+    self:CreateToggle("Infinite Jump", false, function(enabled)
+        RivalsModule:UpdateSettings({Movement = {InfiniteJump = enabled}})
+    end, movementSection)
+    
+    self:CreateToggle("No Clip", false, function(enabled)
+        RivalsModule:UpdateSettings({Movement = {NoClip = enabled}})
+    end, movementSection)
+    
+    -- Hitbox Section
+    local hitboxSection = self:CreateSection("🎯 Hitbox Expander", rivalsFrame)
+    
+    self:CreateToggle("Enable Hitbox", false, function(enabled)
+        RivalsModule:UpdateSettings({Hitbox = {Enabled = enabled}})
+    end, hitboxSection)
+    
+    self:CreateSlider("Hitbox Size", 1, 50, 10, function(value)
+        RivalsModule:UpdateSettings({Hitbox = {Size = value}})
+    end, hitboxSection)
+    
+    self:CreateToggle("Visualize", false, function(enabled)
+        RivalsModule:UpdateSettings({Hitbox = {Visualize = enabled}})
+    end, hitboxSection)
+    
+    -- Visuals Section
+    local visualsSection = self:CreateSection("🎨 Visuals", rivalsFrame)
+    
+    self:CreateToggle("Remove Fog", true, function(enabled)
+        RivalsModule:UpdateSettings({Visuals = {RemoveFog = enabled}})
+    end, visualsSection)
+    
+    self:CreateToggle("Fullbright", true, function(enabled)
+        RivalsModule:UpdateSettings({Visuals = {Fullbright = enabled}})
+    end, visualsSection)
+    
+    self:CreateSlider("Brightness", 0, 5, 2, function(value)
+        RivalsModule:UpdateSettings({Visuals = {Brightness = value}})
+    end, visualsSection)
+    
+    self:CreateToggle("Crosshair", true, function(enabled)
+        RivalsModule:UpdateSettings({Visuals = {Crosshair = enabled}})
+    end, visualsSection)
+    
+    self:CreateToggle("FOV Changer", false, function(enabled)
+        RivalsModule:UpdateSettings({Visuals = {FOVChanger = enabled}})
+    end, visualsSection)
+    
+    self:CreateSlider("FOV Value", 70, 120, 90, function(value)
+        RivalsModule:UpdateSettings({Visuals = {FOVValue = value}})
+    end, visualsSection)
+end
+
+-- 🛏️ Create Bedwars Tab (NEW v6.0.0)
+function GUI:CreateBedwarsTab(contentFrame)
+    local bedwarsFrame = Instance.new("ScrollingFrame")
+    bedwarsFrame.Name = "BedwarsFrame"
+    bedwarsFrame.Size = UDim2.new(1, 0, 1, 0)
+    bedwarsFrame.Position = UDim2.new(0, 0, 0, 0)
+    bedwarsFrame.BackgroundTransparency = 1
+    bedwarsFrame.ScrollBarThickness = 4
+    bedwarsFrame.ScrollBarImageColor3 = CONFIG.THEME.ACCENT
+    bedwarsFrame.Parent = contentFrame
+    
+    local bedwarsLayout = Instance.new("UIListLayout")
+    bedwarsLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    bedwarsLayout.Padding = UDim.new(0, 10)
+    bedwarsLayout.Parent = bedwarsFrame
+    
+    -- Main Toggle
+    local mainSection = self:CreateSection("🛏️ Bedwars Module", bedwarsFrame)
+    local mainToggle = self:CreateToggle("Enable Bedwars Module", false, function(enabled)
+        BedwarsModule:Toggle(enabled)
+        if CONFIG.NOTIFICATIONS then
+            NotificationSystem:ShowSuccess("Bedwars", "Bedwars Module " .. (enabled and "activated! 🏆" or "deactivated"))
+        end
+    end, mainSection)
+    
+    -- Bed ESP Section
+    local bedESPSection = self:CreateSection("🛏️ Bed ESP", bedwarsFrame)
+    
+    self:CreateToggle("Enable Bed ESP", false, function(enabled)
+        BedwarsModule:UpdateSettings({BedESP = {Enabled = enabled}})
+    end, bedESPSection)
+    
+    self:CreateToggle("Show Distance", true, function(enabled)
+        BedwarsModule:UpdateSettings({BedESP = {ShowDistance = enabled}})
+    end, bedESPSection)
+    
+    self:CreateToggle("Show Health", true, function(enabled)
+        BedwarsModule:UpdateSettings({BedESP = {ShowHealth = enabled}})
+    end, bedESPSection)
+    
+    self:CreateToggle("Team Color", true, function(enabled)
+        BedwarsModule:UpdateSettings({BedESP = {TeamColor = enabled}})
+    end, bedESPSection)
+    
+    -- Auto Bridge Section
+    local autoBridgeSection = self:CreateSection("🌉 Auto Bridge", bedwarsFrame)
+    
+    self:CreateToggle("Enable Auto Bridge", false, function(enabled)
+        BedwarsModule:UpdateSettings({AutoBridge = {Enabled = enabled}})
+    end, autoBridgeSection)
+    
+    self:CreateSlider("Bridge Speed", 1, 10, 5, function(value)
+        BedwarsModule:UpdateSettings({AutoBridge = {Speed = value}})
+    end, autoBridgeSection)
+    
+    self:CreateToggle("Safe Mode", true, function(enabled)
+        BedwarsModule:UpdateSettings({AutoBridge = {SafeMode = enabled}})
+    end, autoBridgeSection)
+    
+    -- Resource ESP Section
+    local resourceSection = self:CreateSection("💎 Resource ESP", bedwarsFrame)
+    
+    self:CreateToggle("Enable Resource ESP", false, function(enabled)
+        BedwarsModule:UpdateSettings({ResourceESP = {Enabled = enabled}})
+    end, resourceSection)
+    
+    self:CreateToggle("Show Diamonds", true, function(enabled)
+        BedwarsModule:UpdateSettings({ResourceESP = {Diamonds = enabled}})
+    end, resourceSection)
+    
+    self:CreateToggle("Show Emeralds", true, function(enabled)
+        BedwarsModule:UpdateSettings({ResourceESP = {Emeralds = enabled}})
+    end, resourceSection)
+    
+    self:CreateToggle("Show Iron", true, function(enabled)
+        BedwarsModule:UpdateSettings({ResourceESP = {Iron = enabled}})
+    end, resourceSection)
+    
+    self:CreateToggle("Show Gold", true, function(enabled)
+        BedwarsModule:UpdateSettings({ResourceESP = {Gold = enabled}})
+    end, resourceSection)
+    
+    self:CreateSlider("Max Distance", 100, 1000, 500, function(value)
+        BedwarsModule:UpdateSettings({ResourceESP = {MaxDistance = value}})
+    end, resourceSection)
+    
+    -- Generator ESP Section
+    local generatorSection = self:CreateSection("⚒️ Generator ESP", bedwarsFrame)
+    
+    self:CreateToggle("Enable Generator ESP", false, function(enabled)
+        BedwarsModule:UpdateSettings({GeneratorESP = {Enabled = enabled}})
+    end, generatorSection)
+    
+    self:CreateToggle("Show Diamond Generators", true, function(enabled)
+        BedwarsModule:UpdateSettings({GeneratorESP = {ShowDiamond = enabled}})
+    end, generatorSection)
+    
+    self:CreateToggle("Show Emerald Generators", true, function(enabled)
+        BedwarsModule:UpdateSettings({GeneratorESP = {ShowEmerald = enabled}})
+    end, generatorSection)
+    
+    self:CreateToggle("Show Timers", true, function(enabled)
+        BedwarsModule:UpdateSettings({GeneratorESP = {ShowTimers = enabled}})
+    end, generatorSection)
+    
+    -- Auto Defense Section
+    local defenseSection = self:CreateSection("🛡️ Auto Defense", bedwarsFrame)
+    
+    self:CreateToggle("Enable Auto Defense", false, function(enabled)
+        BedwarsModule:UpdateSettings({AutoDefense = {Enabled = enabled}})
+    end, defenseSection)
+    
+    self:CreateToggle("Alert on Enemy Near", true, function(enabled)
+        BedwarsModule:UpdateSettings({AutoDefense = {AlertOnEnemyNear = enabled}})
+    end, defenseSection)
+    
+    self:CreateSlider("Alert Distance", 10, 50, 20, function(value)
+        BedwarsModule:UpdateSettings({AutoDefense = {AlertDistance = value}})
+    end, defenseSection)
+    
+    -- Inventory Section
+    local inventorySection = self:CreateSection("🎒 Inventory", bedwarsFrame)
+    
+    self:CreateToggle("Auto Equip Armor", true, function(enabled)
+        BedwarsModule:UpdateSettings({Inventory = {AutoEquipArmor = enabled}})
+    end, inventorySection)
+    
+    self:CreateToggle("Auto Equip Sword", true, function(enabled)
+        BedwarsModule:UpdateSettings({Inventory = {AutoEquipSword = enabled}})
+    end, inventorySection)
+    
+    self:CreateToggle("Drop Junk", false, function(enabled)
+        BedwarsModule:UpdateSettings({Inventory = {DropJunk = enabled}})
+    end, inventorySection)
 end
 
 -- Create combat tab

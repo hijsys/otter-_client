@@ -1,344 +1,945 @@
-# 🦦 Otter Client ULTIMATE v5.0.3
+# 🦦 Otter Client - RIVALS & BEDWARS EDITION v6.0.0
 
-## 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
+<div align="center">
 
-### 📝 What's New in v5.0.3
-- ✅ **Fixed Critical Bugs**: Resolved module loading and GUI helper function issues
-- ✅ **Better Performance**: Added debouncing to slider updates
-- ✅ **Memory Management**: Proper cleanup mechanism for connections
-- ✅ **Enhanced Error Handling**: More robust error handling throughout
-- ✅ **Menu Keybind**: Working keybind system for menu toggle
-- ✅ **Code Quality**: Improved code organization and maintainability
+## 🎮 THE ULTIMATE UPDATE - RIVALS DOMINATION! ⚔️
 
-The most advanced Roblox cheat client with professional-grade features, anti-cheat bypasses, and game-specific optimizations.
+### ⚡ **GO ALL OUT ON RIVALS** ⚡
 
-## ✨ ULTIMATE FEATURES
+**The most comprehensive Rivals cheat module EVER created + Enhanced Bedwars support**
 
-### 🛡️ Advanced Anti-Cheat Bypass System
-- **Memory Protection**: Randomization, encryption, anti-scan
-- **Execution Protection**: Anti-debugger, randomization, injection
-- **Network Protection**: Traffic encryption, packet randomization
-- **Behavior Protection**: Humanized input, randomized timing
-- **Detection Evasion**: Process hiding, registry cleaning
+[![Version](https://img.shields.io/badge/version-6.0.0-red.svg)](https://github.com/hijsys/otter-_client)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Game](https://img.shields.io/badge/game-Rivals-ff0000.svg)]()
+[![Game](https://img.shields.io/badge/game-Bedwars-00bfff.svg)]()
 
-### 🎯 20+ Advanced Modules
-- **Combat**: Aimbot, Killaura, Auto Clicker, Auto Block, Anti Knockback
-- **Movement**: Speed, Fly, Jetpack, NoClip, Teleport
-- **Visual**: ESP, Fullbright, X-Ray, Chams, Glow Effects
-- **Utility**: Auto Tools, Auto Collect, Auto Farm, Auto Sell, Inventory Manager
-
-### 🎨 Ultimate GUI System
-- **6 Themes**: Dark, Light, Neon, Ocean, Fire, Rainbow
-- **Animations**: Slide, Fade, Scale, Rotation effects
-- **Sound Effects**: Click, Hover, Success, Error, Notification
-- **Visual Effects**: Particles, Shadows, Glow effects
-- **Professional UI**: Smooth animations and transitions
-
-### 🎮 Game-Specific Optimizations
-- **Bedwars**: Bed detection, diamond/emerald generators, auto bridge
-- **Arsenal**: Weapon detection, map awareness, killstreak tracking
-- **Jailbreak**: Cop detection, criminal tracking, escape routes
-- **Adopt Me**: Pet detection, house optimization, trading enhancement
-- **Tower Defense**: Tower placement, enemy tracking, path optimization
-
-### 👁️ Advanced ESP System
-- **3D Boxes**: Professional 3D bounding boxes
-- **Tracers**: Line tracers to players
-- **Skeletons**: Bone structure visualization
-- **Chams**: Player/Object material replacement
-- **Glow**: Advanced glow effects
-- **Health/Distance**: Real-time information display
-
-### 🚀 Performance Optimization
-- **Memory Management**: Garbage collection, memory pooling
-- **CPU Optimization**: Thread management, task scheduling
-- **GPU Optimization**: Rendering, lighting, effects optimization
-- **Network Optimization**: Bandwidth, latency, reliability
-- **Auto Optimization**: Automatic performance tuning
-
-## 🎯 COMBAT MODULES
-
-### 🎯 Advanced Aimbot
-- Silent aim with prediction
-- Bone selection (Head, Torso, etc.)
-- FOV circle with customization
-- Smoothing and team checks
-- Visible check and priority system
-
-### ⚔️ Ultimate Killaura
-- Smart targeting system
-- Auto block and auto sword
-- Anti knockback protection
-- Range detection and weapon priority
-- Armor detection and combo system
-
-### 🖱️ Auto Clicker
-- CPS control with randomization
-- Humanization features
-- Burst mode capabilities
-- Timing variation for realism
-
-### 🛡️ Auto Block
-- Smart blocking system
-- Timing control and prediction
-- Combo protection
-- Advanced blocking algorithms
-
-## 🏃 MOVEMENT MODULES
-
-### 🏃 Advanced Speed
-- Multiple speed types (WalkSpeed, BodyVelocity, CFrame, Tween)
-- Smooth movement with anti-detection
-- Customizable speed values
-- Performance optimization
-
-### 🚁 Ultimate Fly
-- BodyVelocity, CFrame, and Tween fly methods
-- NoClip integration
-- Auto land functionality
-- Speed control and smoothness
-
-### 🚀 Jetpack
-- Fuel system with management
-- Thrust control and hover mode
-- Auto refuel capabilities
-- Advanced flight mechanics
-
-### 👻 NoClip
-- Smart noclip system
-- Collision detection
-- Speed control and auto toggle
-- Performance optimization
-
-### 📍 Teleport
-- Player and location teleportation
-- Safe teleport with delay
-- Teleport history tracking
-- Advanced safety features
-
-## 👁️ VISUAL MODULES
-
-### 👁️ Ultimate ESP
-- **3D Boxes**: Professional bounding boxes
-- **Tracers**: Line tracers to players
-- **Names**: Player name display
-- **Health**: Real-time health information
-- **Distance**: Distance calculation and display
-- **Skeletons**: Bone structure visualization
-- **Chams**: Material replacement system
-- **Glow**: Advanced glow effects
-
-### 💡 Fullbright
-- Brightness control with smooth transitions
-- Auto adjust functionality
-- Performance optimization
-- Customizable lighting
-
-### 🔍 X-Ray
-- Wall transparency system
-- Object filtering capabilities
-- Depth control features
-- Advanced visibility options
-
-### 🎨 Chams
-- Player and object chams
-- Color customization
-- Material control
-- Advanced rendering options
-
-## 🛠️ UTILITY MODULES
-
-### 🔧 Auto Tools
-- Automatic tool equipping
-- Tool priority system
-- Auto collect functionality
-- Tool sorting capabilities
-
-### 📦 Auto Collect
-- Item detection system
-- Range control
-- Filter system for items
-- Auto sort functionality
-
-### 🌾 Auto Farm
-- Crop detection system
-- Auto plant and harvest
-- Path finding capabilities
-- Advanced farming algorithms
-
-### 💰 Auto Sell
-- Item detection and selling
-- Price optimization
-- Bulk selling capabilities
-- Profit tracking system
-
-### 📋 Inventory Manager
-- Auto sort functionality
-- Item tracking system
-- Space optimization
-- Quick access features
-
-## 🎮 GAME-SPECIFIC FEATURES
-
-### 🛏️ Bedwars Optimizations
-- **Bed Detection**: Advanced bed location system
-- **Diamond Generator**: Generator detection and optimization
-- **Emerald Generator**: High-value generator tracking
-- **Auto Bridge**: Automatic bridge building
-- **Auto Defend**: Bed protection system
-- **Team Management**: Team coordination features
-
-### 🔫 Arsenal Optimizations
-- **Weapon Detection**: Advanced weapon identification
-- **Map Awareness**: Map knowledge and optimization
-- **Spawn Protection**: Spawn area safety features
-- **Killstreak Tracking**: Killstreak monitoring and rewards
-- **Aim Prediction**: Advanced aiming assistance
-- **Movement Optimization**: Enhanced movement capabilities
-
-### 🚔 Jailbreak Optimizations
-- **Cop Detection**: Police officer identification
-- **Criminal Tracking**: Criminal player monitoring
-- **Escape Routes**: Optimal escape path finding
-- **Money Farming**: Automated money collection
-- **Vehicle Optimization**: Vehicle performance enhancement
-- **Prison Optimization**: Prison-specific features
-
-### 🏰 Adopt Me Optimizations
-- **Pet Detection**: Pet identification system
-- **Money Farming**: Automated money collection
-- **House Optimization**: House management features
-- **Trading Enhancement**: Advanced trading capabilities
-- **Task Automation**: Automated task completion
-
-### 🎯 Tower Defense Optimizations
-- **Tower Placement**: Optimal tower positioning
-- **Enemy Tracking**: Enemy monitoring system
-- **Path Optimization**: Path finding algorithms
-- **Resource Management**: Resource optimization
-- **Wave Prediction**: Wave analysis and prediction
-
-## 🛡️ ANTI-CHEAT BYPASSES
-
-### 🧠 Memory Protection
-- **RandomizeMemoryLayout**: Randomizes memory allocation patterns
-- **EncryptSensitiveData**: Encrypts critical data
-- **AntiMemoryScan**: Protects against memory scanning
-- **CodeObfuscation**: Obfuscates code structure
-
-### ⚡ Execution Protection
-- **AntiDebugger**: Detects and evades debugging tools
-- **ExecutionRandomization**: Randomizes execution patterns
-- **CodeInjection**: Advanced code injection techniques
-- **ProcessHollowing**: Process manipulation methods
-
-### 🌐 Network Protection
-- **TrafficEncryption**: Encrypts network traffic
-- **PacketRandomization**: Randomizes packet patterns
-- **AntiPacketSniffing**: Prevents packet analysis
-- **ProxyRotation**: Rotates network proxies
-
-### 🤖 Behavior Protection
-- **HumanizedInput**: Human-like input patterns
-- **RandomizedTiming**: Randomizes timing patterns
-- **AntiPatternDetection**: Prevents pattern detection
-- **BehavioralMimicry**: Mimics human behavior
-
-## 🚀 PERFORMANCE OPTIMIZATION
-
-### 💾 Memory Management
-- **Garbage Collection**: Automatic memory cleanup
-- **Memory Pooling**: Efficient memory allocation
-- **Object Pooling**: Reuses objects for efficiency
-- **Memory Monitoring**: Real-time memory tracking
-
-### 🖥️ CPU Optimization
-- **Thread Management**: Optimizes thread usage
-- **Task Scheduling**: Efficient task scheduling
-- **Loop Optimization**: Optimizes game loops
-- **CPU Monitoring**: Real-time CPU tracking
-
-### 🎮 GPU Optimization
-- **Rendering Optimization**: Optimizes rendering pipeline
-- **Lighting Optimization**: Optimizes lighting system
-- **Effects Optimization**: Optimizes visual effects
-- **GPU Monitoring**: Real-time GPU tracking
-
-### 🌐 Network Optimization
-- **Bandwidth Optimization**: Optimizes network usage
-- **Latency Optimization**: Reduces network latency
-- **Reliability Optimization**: Improves network reliability
-- **Network Monitoring**: Real-time network tracking
-
-## 📱 SUPPORTED EXECUTORS
-
-- ✅ **Codex**
-- ✅ **Synapse X**
-- ✅ **Script-Ware**
-- ✅ **KRNL**
-- ✅ **Fluxus**
-- ✅ **JJSploit**
-- ✅ **And more!**
-
-## 🔒 SECURITY FEATURES
-
-- 🛡️ **Advanced Anti-Detection**
-- 🔐 **Encrypted Configs**
-- 🚫 **Safe Execution**
-- 🔄 **Memory Management**
-- ⚡ **Performance Optimized**
-- 🎯 **Game-Specific Bypasses**
-- 🔒 **Multi-Layer Protection**
-
-## 🎯 SETUP INSTRUCTIONS
-
-1. **Copy Loadstring**: Copy the loadstring from `Loadstring.lua`
-2. **Open Executor**: Open your preferred executor
-3. **Paste Code**: Paste the loadstring into the executor
-4. **Execute**: Run the script
-5. **Enter Key**: Enter the key `123` when prompted
-6. **Enjoy**: Enjoy the ultimate Roblox experience!
-
-## 🔧 TROUBLESHOOTING
-
-### Common Issues
-- **Loadstring Failed**: Try alternative loadstrings in the file
-- **Key Not Working**: Make sure you're entering `123` exactly
-- **Performance Issues**: Enable performance optimization
-- **Detection Issues**: Enable anti-cheat bypasses
-
-### Solutions
-- Check your internet connection
-- Verify executor permissions
-- Try different loadstring methods
-- Enable all optimization features
-
-## 📚 DOCUMENTATION
-
-- 📖 **Complete README** (this file)
-- 🎯 **Setup Instructions** (above)
-- 🔧 **Module Documentation** (in code)
-- 🤝 **Contributing Guidelines** (see CONTRIBUTING.md)
-- 📝 **Changelog** (see CHANGELOG.md)
-- 🎮 **Game-Specific Guides** (in code)
-
-## 🌟 FEATURES SUMMARY
-
-- 🚀 **400% MORE FEATURES** than previous versions
-- 🎯 **PROFESSIONAL GRADE** cheat client
-- 🛡️ **MAXIMUM PROTECTION** & bypasses
-- 🎨 **BEAUTIFUL UI** with animations
-- 🎮 **GAME-SPECIFIC** optimizations
-- 🚀 **PERFORMANCE OPTIMIZED** for maximum speed
-- 👁️ **ADVANCED ESP** with 3D boxes
-- 🎯 **20+ MODULES** for ultimate functionality
-- 🛡️ **ANTI-CHEAT BYPASS** system
-- 🎨 **ULTIMATE GUI** with effects
-
-## 🎮 ENJOY THE ULTIMATE ROBLOX EXPERIENCE!
-
-**Otter Client ULTIMATE v5.0.3** - The most advanced Roblox cheat client ever created!
+</div>
 
 ---
 
-*Made with ❤️ by the Otter Client Team*
+## 🎮 WHAT'S NEW IN v6.0.0?
+
+### 🔥 **COMPLETE RIVALS MODULE - THE STAR OF THE SHOW!**
+
+This update is ALL ABOUT RIVALS! We went **ALL OUT** to create the most comprehensive, powerful, and feature-rich Rivals cheat module ever created. Every single feature has been carefully crafted to give you total domination in every match!
+
+---
+
+## 🎯 RIVALS MODULE - FULL FEATURE BREAKDOWN
+
+### 🎯 **ADVANCED AIMBOT SYSTEM**
+
+The most sophisticated aimbot for Rivals with multiple modes and configurations:
+
+- **🎯 Multiple Prediction Modes**
+  - **Simple Mode**: Basic velocity prediction
+  - **Advanced Mode**: Advanced trajectory calculation
+  - **Ultra Mode**: Distance-based dynamic prediction that adapts to your target's movement
+
+- **⚙️ Customization Options**
+  - FOV Control (0-500°) with visual circle
+  - Smoothing (1-50) for human-like aiming
+  - Adjustable prediction value (0-1)
+  - Target part selection (Head, Torso, HumanoidRootPart)
+  - Customizable FOV circle color
+
+- **🛡️ Smart Features**
+  - Visible check (won't aim through walls)
+  - Team check (won't target teammates)
+  - Distance check with max range
+  - Wall penetration detection
+  - Target locking & sticky aim
+  - Shake reduction for stable aim
+  - Aim assist for precise tracking
+
+- **👻 Silent Aim**
+  - No camera movement
+  - Completely invisible to other players
+  - Perfect accuracy without detection
+
+- **🎬 Auto Features**
+  - Auto-shoot when target is locked
+  - Auto-target closest enemy
+  - Automatic target switching
+
+---
+
+### 👁️ **ULTIMATE ESP SYSTEM**
+
+See everything, know everything, dominate everything:
+
+- **📦 Box ESP**
+  - Professional 3D bounding boxes around players
+  - Team color support
+  - Health-based color coding
+  - Rainbow mode available
+  - Customizable colors and thickness
+
+- **📍 Tracer ESP**
+  - Line tracers from your position to enemies
+  - Customizable colors
+  - Team-based coloring
+  - Distance-based transparency
+
+- **📝 Name ESP**
+  - Player names displayed above characters
+  - Clean, readable font with outline
+  - Customizable size and color
+
+- **❤️ Health ESP**
+  - Real-time health display
+  - Health bar visualization
+  - Numerical HP values
+  - Health percentage
+
+- **📏 Distance ESP**
+  - Accurate distance calculation
+  - Real-time updates
+  - Customizable units
+
+- **🔫 Weapon ESP**
+  - Shows what weapon enemies are holding
+  - Helps you strategize your approach
+
+- **💀 Skeleton ESP**
+  - Visualize enemy body structure
+  - Track movement patterns
+  - Predict enemy actions
+
+- **⭐ Head Dots**
+  - Easy headshot targeting
+  - Visible through walls (optional)
+
+- **🎨 Chams**
+  - Player material replacement
+  - See through walls
+  - Customizable colors and transparency
+
+- **⚙️ Advanced Settings**
+  - Team check toggle
+  - Max distance filter (0-2000m)
+  - Show/hide teammates
+  - Rainbow ESP mode
+  - Health-based coloring
+
+---
+
+### ⚔️ **COMBAT SYSTEM**
+
+Master every fight with advanced combat features:
+
+- **🛡️ Auto-Parry System**
+  - Automatically parry incoming attacks
+  - Adjustable timing (0-0.5s)
+  - Perfect parry mode for frame-perfect blocks
+  - Prediction-based parrying
+  - Works with all weapon types
+
+- **🔄 Auto-Block**
+  - Smart blocking system
+  - Timing control
+  - Combo protection
+
+- **🏃 Auto-Dodge**
+  - Automatic dodge on incoming attacks
+  - Customizable dodge distance
+  - Prediction-based movement
+
+- **🚫 Anti-Ragdoll**
+  - Prevents ragdoll physics
+  - Stay in control during combat
+
+- **⚡ Instant Respawn**
+  - Respawn immediately after death
+  - Get back in the action faster
+
+- **⚔️ Auto-Equip Weapon**
+  - Automatically equip best weapon
+  - Smart weapon selection
+
+---
+
+### 💫 **KILL AURA SYSTEM**
+
+Ultimate kill aura with intelligent targeting:
+
+- **🎯 Targeting Modes**
+  - Closest enemy
+  - Lowest health
+  - Random selection
+
+- **⚙️ Configuration**
+  - Adjustable range (0-50 studs)
+  - Attack delay control (0-0.5s)
+  - Auto-swing attacks
+
+- **🧠 Smart Features**
+  - Multi-target support (up to 3 enemies)
+  - Smart targeting algorithm
+  - Team ignore
+  - Visibility check (optional)
+
+- **🔄 Auto Features**
+  - Auto-attack when in range
+  - Auto-switch targets
+  - Auto-aim at targets
+
+---
+
+### 🎯 **HITBOX EXPANDER**
+
+Make every shot count with expanded hitboxes:
+
+- **📏 Size Control**
+  - Adjustable hitbox size (1-50x)
+  - Independent head/torso expansion
+  - Fine-tuned precision
+
+- **👁️ Visualization**
+  - Optional hitbox visualization
+  - See expanded areas
+  - Customizable colors
+  - Transparency control
+
+- **⚡ Performance**
+  - Optimized for no FPS drop
+  - Works with all other features
+  - Automatic cleanup
+
+---
+
+### 🏃 **MOVEMENT SYSTEM**
+
+Total movement freedom and control:
+
+- **⚡ Speed Modes**
+  - WalkSpeed modification (16-100)
+  - CFrame teleportation
+  - Velocity-based movement
+  - Customizable speed values
+
+- **✈️ Fly System**
+  - Smooth flying controls
+  - Adjustable fly speed (10-150)
+  - WASD + Space/Shift controls
+  - No clip integration
+  - Auto-disable on ground
+
+- **🦘 Infinite Jump**
+  - Jump infinitely
+  - No height limit
+  - Smooth animation
+
+- **👻 No Clip**
+  - Walk through walls
+  - Phase through objects
+  - Collision-free movement
+
+- **🏃 Auto Sprint**
+  - Always sprinting
+  - Maximum movement speed
+
+- **🐰 Bunny Hop**
+  - Auto-bhop for speed boost
+  - Timing optimization
+
+---
+
+### 🎨 **VISUAL ENHANCEMENTS**
+
+Make the game look better and see more:
+
+- **☀️ Fullbright**
+  - Remove darkness completely
+  - Adjustable brightness (0-5)
+  - Custom ambient colors
+  - Smooth transitions
+
+- **🌫️ Remove Fog**
+  - Infinite view distance
+  - Clear visibility
+  - See across entire map
+
+- **➕ Custom Crosshair**
+  - Professional crosshair overlay
+  - Customizable size
+  - Color selection
+  - Always centered
+
+- **🎬 FOV Changer**
+  - Adjust field of view (70-120°)
+  - See more at once
+  - Better awareness
+
+- **🎯 Hit Markers**
+  - Visual hit confirmation
+  - Damage indicators
+  - Kill notifications
+
+- **💥 Kill Effects**
+  - Custom kill effects
+  - Celebration animations
+
+- **👤 Third Person**
+  - Over-the-shoulder view
+  - Adjustable distance (5-20 studs)
+  - Better situational awareness
+
+---
+
+### 📊 **STATS TRACKING SYSTEM**
+
+Track your performance and improve:
+
+- **📈 Live Statistics**
+  - Kills counter
+  - Deaths tracker
+  - K/D ratio calculation
+  - Headshot percentage
+  - Accuracy tracking
+  - Current kill streak
+  - Best kill streak
+  - Total damage dealt
+  - Matches played
+
+- **💾 Persistent Stats**
+  - Stats saved between sessions
+  - Historical data
+  - Performance graphs
+  - Leaderboard integration
+
+---
+
+### 🔧 **MISCELLANEOUS FEATURES**
+
+Extra features for complete control:
+
+- **🔄 Auto Respawn**
+  - Instant respawn on death
+
+- **💬 Chat Features**
+  - Auto chat spam (optional)
+  - Kill say messages
+  - Custom messages
+
+- **🌐 Network**
+  - Fake lag simulation
+  - Server hopping
+  - Anti-AFK system
+
+---
+
+## 🛏️ BEDWARS MODULE - COMPLETE DOMINANCE
+
+### 🛏️ **BED ESP SYSTEM**
+
+Never lose track of any bed:
+
+- **📍 Bed Detection**
+  - Automatically finds all beds on the map
+  - Shows your team's bed (toggle)
+  - Shows enemy beds
+  - Distance display
+  - Health/protection display
+
+- **🎨 Visual Options**
+  - Team-colored boxes
+  - Custom colors
+  - Distance labels
+  - Protection status
+  - Box outlines
+
+---
+
+### 🌉 **AUTO BRIDGE SYSTEM**
+
+Bridge like a pro, automatically:
+
+- **⚙️ Bridge Modes**
+  - Standard bridging
+  - Safe mode (won't fall)
+  - Downward placement
+  - Auto-sprint while bridging
+
+- **🎯 Configuration**
+  - Adjustable speed (1-10)
+  - Block type selection (Wool, Wood, Stone)
+  - Safety checks
+  - Auto-correction
+
+---
+
+### 💎 **RESOURCE ESP**
+
+See all valuable resources:
+
+- **💎 Resource Types**
+  - Diamond ESP
+  - Emerald ESP
+  - Iron ESP
+  - Gold ESP
+
+- **📏 Distance Filter**
+  - Max distance setting (100-1000m)
+  - Only show nearby resources
+  - Prioritize rare resources
+
+- **🎨 Visual Features**
+  - Color-coded by type
+  - Distance display
+  - Spawn timer (if available)
+  - Quantity indicator
+
+---
+
+### ⚒️ **GENERATOR ESP**
+
+Track all generators on the map:
+
+- **📍 Generator Types**
+  - Diamond generators
+  - Emerald generators
+  - Team generators
+
+- **ℹ️ Information Display**
+  - Upgrade level
+  - Spawn timers
+  - Generation speed
+  - Distance
+
+- **⚡ Optimization**
+  - Auto-path to generators
+  - Alert on spawn
+  - Priority system
+
+---
+
+### 🛡️ **AUTO-DEFENSE SYSTEM**
+
+Protect your bed automatically:
+
+- **🚨 Alert System**
+  - Enemy proximity alerts
+  - Adjustable alert distance (10-50 studs)
+  - Sound notifications
+  - Visual warnings
+
+- **🏗️ Auto-Place**
+  - Automatic defense building
+  - Smart block placement
+  - Distance control
+  - Block type selection
+
+---
+
+### 🎒 **INVENTORY MANAGEMENT**
+
+Smart inventory handling:
+
+- **⚔️ Auto-Equip**
+  - Best armor auto-equip
+  - Best sword auto-equip
+  - Tool priority system
+
+- **🗑️ Auto-Drop**
+  - Drop junk items
+  - Keep valuable items
+  - Custom drop list
+
+- **📦 Auto-Sort**
+  - Organize inventory
+  - Quick access
+  - Hotbar optimization
+
+---
+
+### 🏃 **SPEED BRIDGING**
+
+Multiple speed bridge modes:
+
+- **Normal Mode**: Standard speed bridging
+- **Ninja Mode**: Advanced techniques
+- **God Mode**: Maximum speed (risky)
+
+Features:
+- Auto-jump timing
+- Safe mode option
+- Block optimization
+- Speed control
+
+---
+
+### 💰 **AUTO-MINING**
+
+Automatic resource collection:
+
+- **⛏️ Auto-Farm**
+  - Diamond farming
+  - Emerald farming
+  - Iron farming
+  - Gold farming
+
+- **🎯 Smart Features**
+  - Nearest resource priority
+  - Auto-path finding
+  - Collection optimization
+  - Inventory management
+
+---
+
+## 🎨 USER INTERFACE
+
+### Beautiful & Professional GUI
+
+- **🎯 Dedicated Tabs**
+  - 🎮 **Rivals Tab**: All Rivals features in one place
+  - 🛏️ **Bedwars Tab**: All Bedwars features organized
+  - ⚔️ Combat Tab: General combat features
+  - 🏃 Movement Tab: Movement options
+  - 👁️ Visual Tab: ESP and visual features
+  - 🔧 Misc Tab: Utility features
+  - ⚙️ Settings Tab: Configuration
+
+- **🎨 Themes**
+  - Dark Theme
+  - Light Theme
+  - Neon Theme
+  - Ocean Theme
+  - Fire Theme
+  - Rainbow Theme
+
+- **⚡ Features**
+  - Smooth animations
+  - Drag-and-drop
+  - Resizable windows
+  - Minimize/maximize
+  - Hotkey support (RIGHT SHIFT to toggle)
+
+---
+
+## 🚀 SETUP & INSTALLATION
+
+### Method 1: Loadstring (Recommended)
+
+1. **Open your executor** (Synapse X, KRNL, Fluxus, etc.)
+2. **Copy this loadstring**:
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua"))()
+```
+3. **Paste into executor**
+4. **Execute the script**
+5. **Enter key**: `123`
+6. **Press RIGHT SHIFT** to open menu
+7. **Go to Rivals or Bedwars tab**
+8. **Enable the module and configure settings**
+9. **DOMINATE THE GAME!** 🔥
+
+### Method 2: Local File
+
+1. Download `OtterClient_Standalone.lua`
+2. Place in your executor's scripts folder
+3. Execute from your executor's script list
+4. Follow steps 5-9 above
+
+### Method 3: Alternative Loadstring
+
+If the main loadstring doesn't work, try:
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hijsys/otter-_client/main/OtterClient_Standalone.lua?raw=true"))()
+```
+
+---
+
+## 🎮 HOW TO USE - RIVALS
+
+### Quick Start Guide
+
+1. **Join a Rivals match**
+2. **Execute the script** (use loadstring above)
+3. **Press RIGHT SHIFT** to open menu
+4. **Click on the 🎮 RIVALS tab**
+5. **Toggle "Enable Rivals Module"**
+6. **Configure your settings**:
+   - Enable Aimbot (adjust FOV and smoothing)
+   - Enable ESP (choose what you want to see)
+   - Enable Auto-Parry for automatic blocks
+   - Enable Kill Aura for auto-attacks
+   - Adjust Movement (speed, fly, etc.)
+   - Enable Hitbox Expander
+   - Customize Visuals
+7. **Close menu** (RIGHT SHIFT)
+8. **DOMINATE!** 🔥
+
+### Recommended Settings for Beginners
+
+**Aimbot:**
+- FOV: 120
+- Smoothing: 20
+- Prediction: 0.135
+- Silent Aim: Enabled
+- Show FOV: Enabled
+
+**ESP:**
+- Boxes: Enabled
+- Tracers: Enabled
+- Names: Enabled
+- Health: Enabled
+- Distance: Enabled
+
+**Combat:**
+- Auto-Parry: Enabled
+- Parry Timing: 0.15
+- Perfect Parry: Disabled (enable when experienced)
+
+**Movement:**
+- Speed: 25
+- Fly: Disabled (use when needed)
+
+**Visuals:**
+- Fullbright: Enabled
+- Remove Fog: Enabled
+- Crosshair: Enabled
+
+### Advanced Configuration
+
+**For Maximum Aggression:**
+- Kill Aura: Enabled (Range: 20, Delay: 0.05)
+- Hitbox Expander: Enabled (Size: 15)
+- Auto-Parry: Perfect Parry Mode
+- Speed: 35+
+- Silent Aim: Enabled
+
+**For Stealth:**
+- ESP Only (no visible features)
+- Normal movement
+- Manual parrying
+- Precise aimbot (high smoothing)
+
+---
+
+## 🛏️ HOW TO USE - BEDWARS
+
+### Quick Start Guide
+
+1. **Join a Bedwars match**
+2. **Execute the script**
+3. **Press RIGHT SHIFT**
+4. **Click on 🛏️ BEDWARS tab**
+5. **Toggle "Enable Bedwars Module"**
+6. **Configure your features**:
+   - Bed ESP: See all beds
+   - Resource ESP: Track diamonds/emeralds
+   - Auto-Bridge: Automatic bridging
+   - Auto-Defense: Protect your bed
+   - Inventory: Auto-equip gear
+7. **Play and dominate!** 🏆
+
+### Recommended Bedwars Settings
+
+**Bed ESP:**
+- Enabled: ✅
+- Show Distance: ✅
+- Team Color: ✅
+
+**Resource ESP:**
+- All resources: ✅
+- Max Distance: 500
+
+**Auto-Defense:**
+- Alert Distance: 20
+- Alert on Enemy: ✅
+
+**Inventory:**
+- Auto-Equip Armor: ✅
+- Auto-Equip Sword: ✅
+
+---
+
+## ⌨️ HOTKEYS & CONTROLS
+
+### Default Hotkeys
+
+- **RIGHT SHIFT**: Toggle Menu
+- **LEFT CTRL**: Quick ESP Toggle (when configured)
+- **LEFT ALT**: Quick Aimbot Toggle (when configured)
+- **F1**: Fly Toggle (when configured)
+- **F2**: Speed Toggle (when configured)
+
+### Custom Hotkeys
+
+You can set custom hotkeys in the **Settings** tab!
+
+---
+
+## 🛡️ SECURITY & ANTI-CHEAT
+
+### Built-in Protection
+
+- **🛡️ Advanced Anti-Detection**
+  - Randomized behavior patterns
+  - Humanized input simulation
+  - Memory protection
+  - Code obfuscation
+
+- **🔐 Safe Execution**
+  - Error handling at every level
+  - No crashes or freezes
+  - Automatic recovery
+  - Safe module loading
+
+- **🚀 Performance Optimized**
+  - No FPS drops
+  - Efficient rendering
+  - Memory management
+  - CPU optimization
+
+### Detection Risks
+
+While we've implemented extensive anti-detection measures, **use at your own risk**. Game anti-cheats are constantly evolving. We recommend:
+
+- Don't be obvious (don't use max settings immediately)
+- Use humanized settings (smoothing on aimbot, realistic speeds)
+- Don't brag in chat about using cheats
+- Be respectful to other players
+- Take breaks between sessions
+
+---
+
+## 💡 TIPS & TRICKS
+
+### Rivals Tips
+
+1. **Master the Parry**: Auto-parry is powerful, but manual parrying with good timing is still best
+2. **Use Prediction**: Adjust prediction based on enemy movement patterns
+3. **FOV Sweet Spot**: 100-150 FOV is usually optimal
+4. **Smooth Aim**: Higher smoothing = more legit looking
+5. **Hitbox Size**: 10-15 is powerful without being obvious
+6. **Movement**: Use fly sparingly, speed is less detectable
+7. **ESP**: Use tracers to predict enemy positions
+8. **Stats**: Monitor your K/D to improve
+
+### Bedwars Tips
+
+1. **Bed ESP**: Always know where enemy beds are
+2. **Resource Priority**: Focus on diamonds and emeralds
+3. **Auto-Bridge**: Use safe mode when learning
+4. **Defense**: Set alerts to 20-30 studs for good warning time
+5. **Inventory**: Keep your hotbar organized
+6. **Generators**: Check ESP for upgrade levels
+7. **Speed Bridge**: Start with Normal mode, progress to Ninja/God
+
+---
+
+## 🎯 SUPPORTED EXECUTORS
+
+### ✅ Fully Tested & Working
+
+- **Synapse X** (Recommended)
+- **Script-Ware**
+- **KRNL**
+- **Fluxus**
+- **Codex**
+- **Electron**
+- **Oxygen U**
+
+### ⚠️ Partially Supported
+
+- **JJSploit** (some features may not work)
+- **Kiwi X**
+
+### Testing Status
+
+We test on multiple executors before each release. If you encounter issues with your executor, please report them!
+
+---
+
+## 🐛 TROUBLESHOOTING
+
+### Common Issues & Solutions
+
+**❌ Script won't load**
+- Check your internet connection
+- Verify executor has HttpService enabled
+- Try alternative loadstring
+- Make sure you're using a supported executor
+
+**❌ Key doesn't work**
+- Make sure you type exactly: `123`
+- No spaces, no capitals
+- If still doesn't work, re-execute the script
+
+**❌ Features not working**
+- Make sure the module is enabled (toggle at top of tab)
+- Check if you're in the right game (Rivals/Bedwars)
+- Verify your executor supports required functions
+- Try re-executing the script
+
+**❌ FPS drops**
+- Disable some ESP features
+- Reduce hitbox visualizations
+- Lower max ESP distance
+- Use performance mode (in Settings)
+
+**❌ Getting detected/banned**
+- Lower your settings (be less obvious)
+- Use higher smoothing on aimbot
+- Don't use maximum values
+- Take breaks between sessions
+- Don't brag in chat
+
+**❌ GUI won't open**
+- Press RIGHT SHIFT
+- Try clicking in the top-center of screen
+- Re-execute the script
+- Check if your executor supports GUI creation
+
+---
+
+## 📝 CHANGELOG
+
+### v6.0.0 - RIVALS & BEDWARS EDITION (2025-10-04)
+
+#### 🎮 NEW: Complete Rivals Module
+- ✅ Advanced Aimbot with 3 prediction modes
+- ✅ Full ESP system (Boxes, Tracers, Names, Health, Distance, Weapons, Skeletons)
+- ✅ Auto-Parry with perfect timing
+- ✅ Kill Aura with smart targeting
+- ✅ Hitbox Expander with visualization
+- ✅ Silent Aim & Aim Assist
+- ✅ Movement system (Speed, Fly, Infinite Jump, No Clip)
+- ✅ Visual enhancements (Fullbright, FOV Changer, Crosshair, Hit Markers)
+- ✅ Stats tracking system
+- ✅ Combat features (Auto-Dodge, Anti-Ragdoll, Instant Respawn)
+
+#### 🛏️ NEW: Enhanced Bedwars Module
+- ✅ Bed ESP with team colors
+- ✅ Auto-Bridge system with multiple modes
+- ✅ Resource ESP (Diamonds, Emeralds, Iron, Gold)
+- ✅ Generator ESP with timers and upgrades
+- ✅ Auto-Defense with alerts
+- ✅ Smart Inventory Management
+- ✅ Speed Bridging (Normal, Ninja, God modes)
+- ✅ Auto-Mining system
+- ✅ Alert system
+
+#### 🎨 UI Improvements
+- ✅ Added dedicated Rivals tab
+- ✅ Added dedicated Bedwars tab
+- ✅ Reorganized all settings
+- ✅ Better visual hierarchy
+- ✅ Improved performance
+
+#### 🔧 Technical Improvements
+- ✅ Optimized rendering pipeline
+- ✅ Better memory management
+- ✅ Improved error handling
+- ✅ Enhanced module loading
+- ✅ Code cleanup and organization
+
+---
+
+## 🤝 CONTRIBUTING
+
+Want to help improve Otter Client? We welcome contributions!
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+### What We Need
+
+- Bug reports
+- Feature suggestions
+- Code improvements
+- Documentation updates
+- Executor compatibility testing
+
+---
+
+## ⚠️ DISCLAIMER
+
+This software is for **educational purposes only**. Use at your own risk. We are not responsible for:
+
+- Account bans or suspensions
+- Loss of progress or items
+- Any consequences of using this software
+- Violation of any game's Terms of Service
+
+By using this software, you agree to take full responsibility for your actions.
+
+---
+
+## 📞 SUPPORT & COMMUNITY
+
+### Getting Help
+
+- **GitHub Issues**: Report bugs or request features
+- **Documentation**: Check this README for answers
+- **Community**: Join discussions with other users
+
+### Reporting Bugs
+
+When reporting bugs, please include:
+1. Executor you're using
+2. Game you're playing
+3. What you were doing when the bug occurred
+4. Error messages (if any)
+5. Steps to reproduce
+
+---
+
+## 🌟 CREDITS
+
+### Development Team
+
+- **Lead Developer**: Otter Client Team
+- **Rivals Module**: Specialized Rivals development team
+- **Bedwars Module**: Bedwars optimization team
+- **UI/UX**: Design team
+- **Testing**: QA team
+
+### Special Thanks
+
+- Community members for feedback and suggestions
+- Beta testers for finding bugs
+- Contributors for code improvements
+
+---
+
+## 📜 LICENSE
+
+MIT License - See LICENSE file for details
+
+---
+
+<div align="center">
+
+## 🦦 OTTER CLIENT - RIVALS & BEDWARS EDITION v6.0.0
+
+### ⚡ **DOMINATE EVERY MATCH** ⚡
+
+**Made with ❤️ by the Otter Client Team**
+
+---
+
+### 🎮 GO ALL OUT ON RIVALS! 🔥
+
+*The most comprehensive Rivals cheat module ever created*
+
+---
+
+**⭐ Star this repo if you love it! ⭐**
+
+**🐛 Found a bug? Report it in Issues!**
+
+**💡 Have a suggestion? We'd love to hear it!**
+
+---
+
+</div>
+
+**Remember: Use responsibly and at your own risk. Happy gaming! 🎮**
