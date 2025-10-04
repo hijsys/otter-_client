@@ -2,6 +2,38 @@
 
 All notable changes to Otter Client Enhanced will be documented in this file.
 
+## [5.0.3] - 2025-10-04
+
+### 🔧 **BUG FIXES & IMPROVEMENTS**
+
+#### 🐛 **Critical Bug Fixes**
+- **Fixed Module Loading System**: Improved `safeRequire` function with proper path validation
+- **Fixed GUI Helper Functions**: Resolved undefined `parent` variable issue in CreateToggle, CreateSlider, CreateButton, and CreateKeybind
+- **Fixed Version Inconsistency**: Synchronized version numbers across all files (README, package.json, OtterClient.lua)
+
+#### ⚡ **Performance Improvements**
+- **Slider Debouncing**: Added 50ms debounce to slider updates to reduce callback spam
+- **Memory Management**: Implemented proper cleanup mechanism for connections to prevent memory leaks
+- **Optimized GUI Rebuilding**: Cleanup function now properly disconnects all connections before rebuilding
+
+#### 🎯 **New Features**
+- **Menu Keybind System**: Added working keybind listener for menu toggle (RIGHT SHIFT by default)
+- **Connection Tracking**: All GUI connections are now tracked and can be properly cleaned up
+- **Enhanced Error Handling**: Added pcall wrappers to GUI initialization with better error messages
+
+#### 📝 **Code Quality**
+- **Better Code Organization**: Improved module loading with helper function `getModulePath`
+- **Comprehensive Comments**: Added detailed changelog comments in main file
+- **Consistent Parenting**: Fixed all GUI element parenting to properly use parent parameter
+
+#### 🛠️ **Technical Changes**
+- Improved `safeRequire` to check for nil paths before attempting require
+- Added `getModulePath` helper function for safer module path resolution
+- Modified all CreateToggle/Slider/Button/Keybind calls to pass parent parameter
+- Added GUI:Cleanup() method for proper resource management
+- Implemented debounced callbacks in slider with final callback on mouse release
+- Added error handling to GUI:Initialize() with return status
+
 ## [4.0.0] - 2024-01-XX
 
 ### 🚀 **MAJOR RELEASE - ULTIMATE ENHANCEMENT**
