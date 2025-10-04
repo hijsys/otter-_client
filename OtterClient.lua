@@ -1,7 +1,16 @@
--- Otter Client - ULTIMATE ENHANCED VERSION 5.0.0
+-- Otter Client - ULTIMATE ENHANCED VERSION 5.0.3
 -- 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
 -- Advanced Anti-Cheat Bypass + 20+ Modules + Ultimate GUI
 -- Key: 123
+--
+-- 📝 IMPROVEMENTS IN v5.0.3:
+-- ✅ Fixed module loading system with proper path validation
+-- ✅ Fixed GUI helper functions (parent parameter issue)
+-- ✅ Added proper cleanup mechanism for connections and memory
+-- ✅ Added debouncing to slider updates for better performance
+-- ✅ Improved error handling throughout the codebase
+-- ✅ Added menu keybind functionality
+-- ✅ Synchronized version numbers across all files
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -19,11 +28,21 @@ local player = Players.LocalPlayer
 
 -- 🔧 SAFE MODULE LOADING SYSTEM
 local function safeRequire(modulePath)
+    -- Check if path exists before attempting require
+    if not modulePath then
+        warn("⚠️ Module path is nil")
+        return {
+            Toggle = function() end,
+            UpdateSettings = function() end,
+            Initialize = function() end
+        }
+    end
+    
     local success, result = pcall(function()
         return require(modulePath)
     end)
     
-    if success then
+    if success and result then
         return result
     else
         warn("⚠️ Failed to load module: " .. tostring(modulePath) .. " - " .. tostring(result))
@@ -40,28 +59,36 @@ end
 local Modules = {}
 local Utils = {}
 
+-- Helper function to safely get module path
+local function getModulePath(folder, moduleName)
+    if script.Parent and script.Parent:FindFirstChild(folder) then
+        return script.Parent[folder]:FindFirstChild(moduleName)
+    end
+    return nil
+end
+
 -- Load ULTIMATE enhanced modules with error handling
-local Aimbot = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Aimbot)
-local Killaura = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Killaura)
-local Speed = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Speed)
-local Fly = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.Fly)
-local ESP = safeRequire(script.Parent and script.Parent.Modules and script.Parent.Modules.ESP)
-local ConfigManager = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.ConfigManager)
-local NotificationSystem = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.NotificationSystem)
-local ThemeManager = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.ThemeManager)
-local Whitelist = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.Whitelist)
+local Aimbot = safeRequire(getModulePath("Modules", "Aimbot"))
+local Killaura = safeRequire(getModulePath("Modules", "Killaura"))
+local Speed = safeRequire(getModulePath("Modules", "Speed"))
+local Fly = safeRequire(getModulePath("Modules", "Fly"))
+local ESP = safeRequire(getModulePath("Modules", "ESP"))
+local ConfigManager = safeRequire(getModulePath("Utils", "ConfigManager"))
+local NotificationSystem = safeRequire(getModulePath("Utils", "NotificationSystem"))
+local ThemeManager = safeRequire(getModulePath("Utils", "ThemeManager"))
+local Whitelist = safeRequire(getModulePath("Utils", "Whitelist"))
 
 -- 🚀 NEW ULTIMATE MODULES with error handling
-local AntiCheat = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.AntiCheat)
-local AdvancedModules = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.AdvancedModules)
-local UltimateGUI = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.UltimateGUI)
-local GameOptimizer = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.GameOptimizer)
-local UltimateESP = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.UltimateESP)
-local PerformanceOptimizer = safeRequire(script.Parent and script.Parent.Utils and script.Parent.Utils.PerformanceOptimizer)
+local AntiCheat = safeRequire(getModulePath("Utils", "AntiCheat"))
+local AdvancedModules = safeRequire(getModulePath("Utils", "AdvancedModules"))
+local UltimateGUI = safeRequire(getModulePath("Utils", "UltimateGUI"))
+local GameOptimizer = safeRequire(getModulePath("Utils", "GameOptimizer"))
+local UltimateESP = safeRequire(getModulePath("Utils", "UltimateESP"))
+local PerformanceOptimizer = safeRequire(getModulePath("Utils", "PerformanceOptimizer"))
 
 -- 🚀 ULTIMATE ENHANCED CONFIGURATION
 local CONFIG = {
-    VERSION = "5.0.0",
+    VERSION = "5.0.3",
     NAME = "Otter Client ULTIMATE",
     KEY = "123",
     MENU_KEY = Enum.KeyCode.RightShift,
@@ -375,24 +402,21 @@ function GUI:CreateCombatTab(contentFrame)
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Aimbot", "Aimbot " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    aimbotToggle.Parent = aimbotSection
+    end, aimbotSection)
     
     local aimbotFOV = self:CreateSlider("FOV", 0, 500, 100, function(value)
         Aimbot:UpdateSettings({FOV = value})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Aimbot", "FOV set to " .. value)
         end
-    end)
-    aimbotFOV.Parent = aimbotSection
+    end, aimbotSection)
     
     local aimbotSmoothing = self:CreateSlider("Smoothing", 0, 100, 20, function(value)
         Aimbot:UpdateSettings({Smoothing = value})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Aimbot", "Smoothing set to " .. value)
         end
-    end)
-    aimbotSmoothing.Parent = aimbotSection
+    end, aimbotSection)
     
     -- Killaura Section
     local killauraSection = self:CreateSection("Killaura", combatFrame)
@@ -402,56 +426,49 @@ function GUI:CreateCombatTab(contentFrame)
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Killaura " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    killauraToggle.Parent = killauraSection
+    end, killauraSection)
     
     local killauraRange = self:CreateSlider("Range", 0, 50, 15, function(value)
         Killaura:UpdateSettings({Range = value})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Range set to " .. value)
         end
-    end)
-    killauraRange.Parent = killauraSection
+    end, killauraSection)
     
     local killauraDelay = self:CreateSlider("Attack Delay", 0, 1, 0.05, function(value)
         Killaura:UpdateSettings({AttackDelay = value})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Attack delay set to " .. value)
         end
-    end)
-    killauraDelay.Parent = killauraSection
+    end, killauraSection)
     
     local autoBlockToggle = self:CreateToggle("Auto Block", true, function(enabled)
         Killaura:UpdateSettings({AutoBlock = enabled})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Auto block " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    autoBlockToggle.Parent = killauraSection
+    end, killauraSection)
     
     local autoSwordToggle = self:CreateToggle("Auto Equip Best Weapon", true, function(enabled)
         Killaura:UpdateSettings({AutoSword = enabled})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Auto equip " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    autoSwordToggle.Parent = killauraSection
+    end, killauraSection)
     
     local smartAimToggle = self:CreateToggle("Smart Aim", true, function(enabled)
         Killaura:UpdateSettings({SmartAim = enabled})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Smart aim " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    smartAimToggle.Parent = killauraSection
+    end, killauraSection)
     
     local antiKnockbackToggle = self:CreateToggle("Anti Knockback", false, function(enabled)
         Killaura:UpdateSettings({AntiKnockback = enabled})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Killaura", "Anti knockback " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    antiKnockbackToggle.Parent = killauraSection
+    end, killauraSection)
 end
 
 -- Create movement tab
@@ -478,16 +495,14 @@ function GUI:CreateMovementTab(contentFrame)
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Speed", "Speed " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    speedToggle.Parent = speedSection
+    end, speedSection)
     
     local speedMultiplier = self:CreateSlider("Speed Multiplier", 1, 10, 2, function(value)
         Speed:UpdateSettings({Multiplier = value})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Speed", "Multiplier set to " .. value)
         end
-    end)
-    speedMultiplier.Parent = speedSection
+    end, speedSection)
     
     -- Fly Section
     local flySection = self:CreateSection("Fly", movementFrame)
@@ -497,16 +512,14 @@ function GUI:CreateMovementTab(contentFrame)
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Fly", "Fly " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    flyToggle.Parent = flySection
+    end, flySection)
     
     local flySpeed = self:CreateSlider("Fly Speed", 0, 100, 20, function(value)
         Fly:UpdateSettings({Speed = value})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("Fly", "Speed set to " .. value)
         end
-    end)
-    flySpeed.Parent = flySection
+    end, flySection)
 end
 
 -- Create visual tab
@@ -533,24 +546,21 @@ function GUI:CreateVisualTab(contentFrame)
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("ESP", "ESP " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    espToggle.Parent = espSection
+    end, espSection)
     
     local espBoxes = self:CreateToggle("Show Boxes", false, function(enabled)
         ESP:UpdateSettings({Boxes = enabled})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("ESP", "Boxes " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    espBoxes.Parent = espSection
+    end, espSection)
     
     local espNames = self:CreateToggle("Show Names", false, function(enabled)
         ESP:UpdateSettings({Names = enabled})
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowInfo("ESP", "Names " .. (enabled and "enabled" or "disabled"))
         end
-    end)
-    espNames.Parent = espSection
+    end, espSection)
 end
 
 -- Create misc tab
@@ -576,8 +586,7 @@ function GUI:CreateMiscTab(contentFrame)
         modules.AutoTools = modules.AutoTools or {}
         modules.AutoTools.Enabled = enabled
         print("Auto Tools " .. (enabled and "enabled" or "disabled"))
-    end)
-    autoToolsToggle.Parent = autoToolsSection
+    end, autoToolsSection)
     
     -- Auto Collect Section
     local autoCollectSection = self:CreateSection("Auto Collect", miscFrame)
@@ -586,8 +595,7 @@ function GUI:CreateMiscTab(contentFrame)
         modules.AutoCollect = modules.AutoCollect or {}
         modules.AutoCollect.Enabled = enabled
         print("Auto Collect " .. (enabled and "enabled" or "disabled"))
-    end)
-    autoCollectToggle.Parent = autoCollectSection
+    end, autoCollectSection)
 end
 
 -- Create settings tab
@@ -626,8 +634,7 @@ function GUI:CreateSettingsTab(contentFrame)
             end
             self:Rebuild()
         end
-    end)
-    themeButton.Parent = themeSection
+    end, themeSection)
     
     -- Keybinds Section
     local keybindsSection = self:CreateSection("Keybinds", settingsFrame)
@@ -635,8 +642,7 @@ function GUI:CreateSettingsTab(contentFrame)
     local guiKeybind = self:CreateKeybind("Toggle GUI", CONFIG.MENU_KEY, function(key)
         CONFIG.MENU_KEY = key
         print("GUI keybind set to " .. key.Name)
-    end)
-    guiKeybind.Parent = keybindsSection
+    end, keybindsSection)
     
     -- Config Section
     local configSection = self:CreateSection("Configuration", settingsFrame)
@@ -653,8 +659,7 @@ function GUI:CreateSettingsTab(contentFrame)
         if CONFIG.NOTIFICATIONS then
             NotificationSystem:ShowSuccess("Config", "Configuration saved successfully!")
         end
-    end)
-    saveConfigButton.Parent = configSection
+    end, configSection)
     
     local loadConfigButton = self:CreateButton("Load Configuration", function()
         local configData = ConfigManager:LoadConfig("default")
@@ -667,8 +672,7 @@ function GUI:CreateSettingsTab(contentFrame)
                 NotificationSystem:ShowError("Config", "Failed to load configuration!")
             end
         end
-    end)
-    loadConfigButton.Parent = configSection
+    end, configSection)
 end
 
 -- Helper functions
@@ -704,12 +708,11 @@ function GUI:CreateSection(title, parent)
     return section
 end
 
-function GUI:CreateToggle(text, default, callback)
+function GUI:CreateToggle(text, default, callback, parent)
     local toggleFrame = Instance.new("Frame")
     toggleFrame.Name = text .. "Toggle"
     toggleFrame.Size = UDim2.new(1, -20, 0, 35)
     toggleFrame.BackgroundTransparency = 1
-    toggleFrame.Parent = parent
     
     local toggleButton = Instance.new("TextButton")
     toggleButton.Name = "ToggleButton"
@@ -750,15 +753,15 @@ function GUI:CreateToggle(text, default, callback)
         callback(enabled)
     end)
     
+    toggleFrame.Parent = parent
     return toggleFrame
 end
 
-function GUI:CreateSlider(text, min, max, default, callback)
+function GUI:CreateSlider(text, min, max, default, callback, parent)
     local sliderFrame = Instance.new("Frame")
     sliderFrame.Name = text .. "Slider"
     sliderFrame.Size = UDim2.new(1, -20, 0, 45)
     sliderFrame.BackgroundTransparency = 1
-    sliderFrame.Parent = parent
     
     local sliderLabel = Instance.new("TextLabel")
     sliderLabel.Name = "Label"
@@ -815,6 +818,8 @@ function GUI:CreateSlider(text, min, max, default, callback)
     
     local dragging = false
     local currentValue = default
+    local debounceTime = 0.05 -- 50ms debounce
+    local lastUpdate = 0
     
     sliderButton.MouseButton1Down:Connect(function()
         dragging = true
@@ -822,7 +827,11 @@ function GUI:CreateSlider(text, min, max, default, callback)
     
     UserInputService.InputEnded:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            dragging = false
+            if dragging then
+                dragging = false
+                -- Final callback on release
+                callback(currentValue)
+            end
         end
     end)
     
@@ -839,14 +848,21 @@ function GUI:CreateSlider(text, min, max, default, callback)
             sliderFill.Size = UDim2.new(percentage, 0, 1, 0)
             sliderButton.Position = UDim2.new(percentage, -9, 0, 0)
             stateStore[text] = value
-            callback(value)
+            
+            -- Debounced callback
+            local now = tick()
+            if now - lastUpdate >= debounceTime then
+                lastUpdate = now
+                callback(value)
+            end
         end
     end)
     
+    sliderFrame.Parent = parent
     return sliderFrame
 end
 
-function GUI:CreateButton(text, callback)
+function GUI:CreateButton(text, callback, parent)
     local button = Instance.new("TextButton")
     button.Name = text .. "Button"
     button.Size = UDim2.new(1, -20, 0, 35)
@@ -856,7 +872,6 @@ function GUI:CreateButton(text, callback)
     button.TextColor3 = CONFIG.THEME.TEXT
     button.TextScaled = true
     button.Font = Enum.Font.GothamBold
-    button.Parent = parent
     
     local buttonCorner = Instance.new("UICorner")
     buttonCorner.CornerRadius = UDim.new(0, 6)
@@ -864,15 +879,15 @@ function GUI:CreateButton(text, callback)
     
     button.MouseButton1Click:Connect(callback)
     
+    button.Parent = parent
     return button
 end
 
-function GUI:CreateKeybind(text, default, callback)
+function GUI:CreateKeybind(text, default, callback, parent)
     local keybindFrame = Instance.new("Frame")
     keybindFrame.Name = text .. "Keybind"
     keybindFrame.Size = UDim2.new(1, -20, 0, 35)
     keybindFrame.BackgroundTransparency = 1
-    keybindFrame.Parent = parent
     
     local keybindLabel = Instance.new("TextLabel")
     keybindLabel.Name = "Label"
@@ -923,7 +938,29 @@ function GUI:CreateKeybind(text, default, callback)
         end
     end)
     
+    keybindFrame.Parent = parent
     return keybindFrame
+end
+
+-- Cleanup function for connections
+function GUI:Cleanup()
+    -- Disconnect all stored connections
+    for _, connection in pairs(connections) do
+        if typeof(connection) == "RBXScriptConnection" then
+            connection:Disconnect()
+        end
+    end
+    connections = {}
+    
+    -- Clean up GUI elements
+    if screenGui then
+        screenGui:Destroy()
+        screenGui = nil
+        mainFrame = nil
+        currentTab = nil
+    end
+    
+    print("🧹 GUI cleaned up successfully")
 end
 
 -- GUI control functions
@@ -948,24 +985,43 @@ end
 
 -- Initialize GUI
 function GUI:Initialize()
-    print("🎨 Initializing Vape v4 style GUI...")
+    local success, err = pcall(function()
+        print("🎨 Initializing Vape v4 style GUI...")
+        
+        self:CreateMainFrame()
+        self:CreateTitleBar()
+        self:CreateTabSystem()
+        
+        print("✅ GUI initialized successfully!")
+    end)
     
-    self:CreateMainFrame()
-    self:CreateTitleBar()
-    self:CreateTabSystem()
+    if not success then
+        warn("❌ Failed to initialize GUI: " .. tostring(err))
+        return false
+    end
     
-    print("✅ GUI initialized successfully!")
+    return true
 end
 
 function GUI:Rebuild()
-    if screenGui then
-        screenGui:Destroy()
-        screenGui = nil
-        mainFrame = nil
-        currentTab = nil
-    end
+    self:Cleanup()
     CONFIG.THEME = ThemeManager:GetCurrentTheme()
     self:Initialize()
+end
+
+-- 🎮 MENU TOGGLE KEYBIND
+local function setupMenuKeybind()
+    local connection = UserInputService.InputBegan:Connect(function(input, gameProcessed)
+        if not gameProcessed and input.KeyCode == CONFIG.MENU_KEY then
+            if screenGui and screenGui.Enabled then
+                GUI:Hide()
+            else
+                GUI:Show()
+            end
+        end
+    end)
+    table.insert(connections, connection)
+    print("🎮 Menu keybind set to " .. CONFIG.MENU_KEY.Name)
 end
 
 -- 🚀 ULTIMATE INITIALIZATION with comprehensive error handling
@@ -1035,9 +1091,20 @@ local function initializeUltimate()
         end
     end
     
+    -- 🎨 Initialize Main GUI
+    local guiSuccess = GUI:Initialize()
+    if guiSuccess then
+        print("✅ Main GUI initialized!")
+    else
+        warn("⚠️ GUI initialization failed, using fallback mode")
+    end
+    
+    -- 🎮 Setup menu keybind
+    setupMenuKeybind()
+    
     print("🚀 Otter Client ULTIMATE initialized successfully!")
     print("🎯 Features: Anti-Cheat Bypass, 20+ Modules, Ultimate GUI, Game Optimizations, Advanced ESP, Performance Boost")
-    print("🎮 Press RIGHT SHIFT to toggle menu")
+    print("🎮 Press " .. CONFIG.MENU_KEY.Name .. " to toggle menu")
     print("🔥 400% MORE FEATURES THAN BEFORE!")
     print("🚀 PERFORMANCE OPTIMIZED FOR MAXIMUM SPEED!")
 end

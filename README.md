@@ -1,6 +1,14 @@
-# 🦦 Otter Client ULTIMATE v5.0.0
+# 🦦 Otter Client ULTIMATE v5.0.3
 
 ## 🚀 BIGGEST UPDATE EVER - 400% MORE FEATURES!
+
+### 📝 What's New in v5.0.3
+- ✅ **Fixed Critical Bugs**: Resolved module loading and GUI helper function issues
+- ✅ **Better Performance**: Added debouncing to slider updates
+- ✅ **Memory Management**: Proper cleanup mechanism for connections
+- ✅ **Enhanced Error Handling**: More robust error handling throughout
+- ✅ **Menu Keybind**: Working keybind system for menu toggle
+- ✅ **Code Quality**: Improved code organization and maintainability
 
 The most advanced Roblox cheat client with professional-grade features, anti-cheat bypasses, and game-specific optimizations.
 
@@ -329,7 +337,7 @@ The most advanced Roblox cheat client with professional-grade features, anti-che
 
 ## 🎮 ENJOY THE ULTIMATE ROBLOX EXPERIENCE!
 
-**Otter Client ULTIMATE v5.0.0** - The most advanced Roblox cheat client ever created!
+**Otter Client ULTIMATE v5.0.3** - The most advanced Roblox cheat client ever created!
 
 ---
 

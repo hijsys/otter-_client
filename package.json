@@ -1,6 +1,6 @@
 {
   "name": "otter-client-enhanced",
-  "version": "4.0.0",
+  "version": "5.0.3",
   "description": "Ultimate Roblox Bedwars Client - Enhanced with Advanced Modules",
   "main": "OtterClient.lua",
   "scripts": {
