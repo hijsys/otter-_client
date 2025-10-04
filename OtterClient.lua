@@ -91,6 +91,10 @@ local GameOptimizer = safeRequire(getModulePath("Utils", "GameOptimizer"))
 local UltimateESP = safeRequire(getModulePath("Utils", "UltimateESP"))
 local PerformanceOptimizer = safeRequire(getModulePath("Utils", "PerformanceOptimizer"))
 
+-- 🔐 AUTHENTICATION SYSTEM
+local AuthSystem = safeRequire(getModulePath("Utils", "AuthSystem"))
+local AuthGUI = safeRequire(getModulePath("Utils", "AuthGUI"))
+
 -- 🚀 ULTIMATE ENHANCED CONFIGURATION
 local CONFIG = {
     VERSION = "5.1.0",
@@ -102,6 +106,10 @@ local CONFIG = {
     AUTO_SAVE = true,
     PERFORMANCE_MODE = false,
     REMOTE_WHITELIST_URL = nil,
+    
+    -- 🔐 AUTHENTICATION
+    REQUIRE_AUTH = true,
+    SKIP_AUTH_FOR_TESTING = false, -- Set to true for testing without auth
     
     -- 🚀 NEW ULTIMATE FEATURES
     ANTI_CHEAT_BYPASS = true,
@@ -115,99 +123,41 @@ local CONFIG = {
     PERFORMANCE_OPTIMIZER = true
 }
 
--- Key System
-local KeySystem = {}
-local keyValid = false
+-- 🔐 AUTHENTICATION HANDLER
+local AuthHandler = {}
+AuthHandler.Authenticated = false
+AuthHandler.UserData = nil
 
-function KeySystem:CheckKey(inputKey)
-    return inputKey == CONFIG.KEY
-end
-
-function KeySystem:ShowKeyPrompt()
-    local keyFrame = Instance.new("Frame")
-    keyFrame.Name = "KeyPrompt"
-    keyFrame.Size = UDim2.new(0, 400, 0, 200)
-    keyFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
-    keyFrame.BackgroundColor3 = CONFIG.THEME.PRIMARY
-    keyFrame.BorderSizePixel = 0
-    keyFrame.Parent = CoreGui
+function AuthHandler:ShowAuthGUI()
+    print("🔐 Showing authentication GUI...")
     
-    local corner = Instance.new("UICorner")
-    corner.CornerRadius = UDim.new(0, 12)
-    corner.Parent = keyFrame
+    -- Initialize auth system
+    AuthSystem:Initialize()
     
-    local stroke = Instance.new("UIStroke")
-    stroke.Color = CONFIG.THEME.ACCENT
-    stroke.Thickness = 2
-    stroke.Parent = keyFrame
+    -- Create promise-like behavior
+    local authCompleted = false
+    local authResult = nil
     
-    local title = Instance.new("TextLabel")
-    title.Size = UDim2.new(1, 0, 0, 50)
-    title.Position = UDim2.new(0, 0, 0, 0)
-    title.BackgroundTransparency = 1
-    title.Text = "🔐 Otter Client Key System"
-    title.TextColor3 = CONFIG.THEME.TEXT
-    title.TextScaled = true
-    title.Font = Enum.Font.GothamBold
-    title.Parent = keyFrame
-    
-    local subtitle = Instance.new("TextLabel")
-    subtitle.Size = UDim2.new(1, 0, 0, 30)
-    subtitle.Position = UDim2.new(0, 0, 0, 50)
-    subtitle.BackgroundTransparency = 1
-    subtitle.Text = "Enter your key to continue"
-    subtitle.TextColor3 = Color3.fromRGB(200, 200, 200)
-    subtitle.TextScaled = true
-    subtitle.Font = Enum.Font.Gotham
-    subtitle.Parent = keyFrame
-    
-    local keyBox = Instance.new("TextBox")
-    keyBox.Size = UDim2.new(1, -40, 0, 40)
-    keyBox.Position = UDim2.new(0, 20, 0, 100)
-    keyBox.BackgroundColor3 = CONFIG.THEME.SECONDARY
-    keyBox.BorderSizePixel = 0
-    keyBox.Text = ""
-    keyBox.PlaceholderText = "Enter key here..."
-    keyBox.TextColor3 = CONFIG.THEME.TEXT
-    keyBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
-    keyBox.TextScaled = true
-    keyBox.Font = Enum.Font.Gotham
-    keyBox.Parent = keyFrame
-    
-    local keyCorner = Instance.new("UICorner")
-    keyCorner.CornerRadius = UDim.new(0, 8)
-    keyCorner.Parent = keyBox
-    
-    local submitButton = Instance.new("TextButton")
-    submitButton.Size = UDim2.new(0, 100, 0, 35)
-    submitButton.Position = UDim2.new(0.5, -50, 0, 150)
-    submitButton.BackgroundColor3 = CONFIG.THEME.ACCENT
-    submitButton.BorderSizePixel = 0
-    submitButton.Text = "Submit"
-    submitButton.TextColor3 = CONFIG.THEME.TEXT
-    submitButton.TextScaled = true
-    submitButton.Font = Enum.Font.GothamBold
-    submitButton.Parent = keyFrame
-    
-    local submitCorner = Instance.new("UICorner")
-    submitCorner.CornerRadius = UDim.new(0, 8)
-    submitCorner.Parent = submitButton
-    
-    submitButton.MouseButton1Click:Connect(function()
-        if self:CheckKey(keyBox.Text) then
-            keyValid = true
-            keyFrame:Destroy()
-            print("✅ Key verified! Starting Otter Client...")
-        else
-            keyBox.Text = ""
-            keyBox.PlaceholderText = "Invalid key! Try again..."
-            TweenService:Create(keyBox, TweenInfo.new(0.2), {BackgroundColor3 = CONFIG.THEME.ERROR}):Play()
-            wait(0.2)
-            TweenService:Create(keyBox, TweenInfo.new(0.2), {BackgroundColor3 = CONFIG.THEME.SECONDARY}):Play()
-        end
+    -- Show auth GUI
+    AuthGUI:Show(AuthSystem, function(keyData)
+        authCompleted = true
+        authResult = keyData
+        AuthHandler.Authenticated = true
+        AuthHandler.UserData = keyData
+        print("✅ Authentication successful!")
+        print("🎫 Tier: " .. (keyData.tier or "unknown"))
+    end, function()
+        authCompleted = true
+        authResult = false
+        print("❌ Authentication cancelled")
     end)
     
-    return keyFrame
+    -- Wait for authentication
+    while not authCompleted do
+        task.wait(0.1)
+    end
+    
+    return authResult ~= false, authResult
 end
 
 -- Ultimate GUI System (Vape v4 Style)
@@ -1391,8 +1341,31 @@ local function initializeUltimate()
     print("🚀 PERFORMANCE OPTIMIZED FOR MAXIMUM SPEED!")
 end
 
--- 🚀 START THE ULTIMATE CLIENT with error handling
+-- 🚀 START THE ULTIMATE CLIENT with authentication
 local success, error = pcall(function()
+    -- Check if authentication is required
+    if CONFIG.REQUIRE_AUTH and not CONFIG.SKIP_AUTH_FOR_TESTING then
+        print("🔐 Authentication required...")
+        
+        local authSuccess, authData = AuthHandler:ShowAuthGUI()
+        
+        if not authSuccess then
+            warn("❌ Authentication failed or cancelled")
+            warn("⛔ Otter Client cannot start without authentication")
+            return
+        end
+        
+        print("✅ Authentication successful!")
+        print("🚀 Starting Otter Client with tier: " .. (authData.tier or "unknown"))
+    else
+        if CONFIG.SKIP_AUTH_FOR_TESTING then
+            print("⚠️ Skipping authentication (testing mode)")
+            AuthHandler.Authenticated = true
+            AuthHandler.UserData = {tier = "admin", features = {"all"}}
+        end
+    end
+    
+    -- Initialize the client
     initializeUltimate()
 end)
 
@@ -1417,4 +1390,7 @@ if not success then
     end
 else
     print("✅ Otter Client Ultimate started successfully!")
+    if AuthHandler.Authenticated and AuthHandler.UserData then
+        print("👤 Welcome! Tier: " .. (AuthHandler.UserData.tier or "unknown"))
+    end
 end

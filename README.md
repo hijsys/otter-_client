@@ -314,13 +314,53 @@ The most advanced Roblox cheat client with professional-grade features, anti-che
 - 🎯 **Game-Specific Bypasses**
 - 🔒 **Multi-Layer Protection**
 
+## 🔐 AUTHENTICATION SYSTEM
+
+Otter Client features a comprehensive authentication system with multiple access tiers:
+
+### 🔑 Available Keys
+
+| Key | Tier | Features | Trial |
+|-----|------|----------|-------|
+| `123` | Free | All basic features | No |
+| `PREMIUM2024` | Premium | All features + Premium modules | No |
+| `RIVALS_PRO` | Rivals | Full Rivals support + All features | No |
+| `LIFETIME_VIP` | VIP | Everything + VIP perks | No |
+| Trial | Trial | Combat, Movement, Visual | 1 Hour |
+
+### ✨ Authentication Features
+
+- **🔐 Key System**: Secure key validation with tier-based access
+- **🆔 HWID Protection**: Optional hardware ID binding for security
+- **📋 Whitelist System**: Admin-controlled user whitelist
+- **🚫 Blacklist System**: Ban system for rule violators
+- **🆓 Free Trial**: 1-hour trial with basic features
+- **⏱️ Session Management**: Automatic session resumption
+- **🌐 Remote Auth**: Optional server-side verification
+- **👤 User Tiers**: Free, Premium, Rivals, VIP, Trial, Admin
+
+### 🎫 Tier Comparison
+
+| Feature | Free | Premium | Rivals | VIP |
+|---------|------|---------|--------|-----|
+| Combat Modules | ✅ | ✅ | ✅ | ✅ |
+| Movement Modules | ✅ | ✅ | ✅ | ✅ |
+| Visual Modules | ✅ | ✅ | ✅ | ✅ |
+| Rivals FPS Features | ❌ | ✅ | ✅ | ✅ |
+| Premium Modules | ❌ | ✅ | ✅ | ✅ |
+| VIP Perks | ❌ | ❌ | ❌ | ✅ |
+| Priority Support | ❌ | ✅ | ✅ | ✅ |
+| No Ads | ❌ | ✅ | ✅ | ✅ |
+
 ## 🎯 SETUP INSTRUCTIONS
 
 1. **Copy Loadstring**: Copy the loadstring from `Loadstring.lua`
 2. **Open Executor**: Open your preferred executor
 3. **Paste Code**: Paste the loadstring into the executor
 4. **Execute**: Run the script
-5. **Enter Key**: Enter the key `123` when prompted
+5. **Authentication**: 
+   - **With Key**: Enter one of the keys above (`123`, `PREMIUM2024`, `RIVALS_PRO`, `LIFETIME_VIP`)
+   - **Free Trial**: Click "Start Free Trial" for 1-hour access
 6. **Enjoy**: Enjoy the ultimate Roblox experience!
 
 ## 🔧 TROUBLESHOOTING

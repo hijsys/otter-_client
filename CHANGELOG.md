@@ -4,7 +4,7 @@ All notable changes to Otter Client Enhanced will be documented in this file.
 
 ## [5.1.0] - 2025-10-04
 
-### 🎯 **RIVALS FPS UPDATE - COMPREHENSIVE GAME SUPPORT**
+### 🎯 **RIVALS FPS UPDATE + AUTHENTICATION SYSTEM**
 
 #### 🚀 **Major Features Added**
 
@@ -149,6 +149,54 @@ This is a **COMPLETE, FOCUSED update** for Rivals that includes:
 - ✅ No random/filler content - everything is purposeful and relevant to Rivals
 
 This update transforms Otter Client into a professional-grade Rivals optimization tool with features that competitive players need.
+
+#### 🔐 **Authentication System**
+- **Complete Auth System**: Professional-grade authentication with multiple tiers
+- **Key System**: Secure key validation with Free, Premium, Rivals, and VIP tiers
+- **HWID Protection**: Optional hardware ID binding for account security
+- **Whitelist/Blacklist**: Admin-controlled user management system
+- **Free Trial System**: 1-hour trial with combat, movement, and visual features
+- **Session Management**: Automatic session resumption with 2-hour timeout
+- **Remote Auth**: Optional server-side verification support
+- **Modern Auth GUI**: Beautiful, animated authentication interface
+
+##### 🔑 **Available Keys**
+- `123` - Free tier with all basic features
+- `PREMIUM2024` - Premium tier with advanced features
+- `RIVALS_PRO` - Full Rivals support + all features
+- `LIFETIME_VIP` - Ultimate tier with VIP perks
+
+##### 🎨 **Auth GUI Features**
+- Modern, animated interface with smooth transitions
+- Real-time status messages and error handling
+- One-click free trial activation
+- Enter key to submit functionality
+- Beautiful blur effects and shadows
+- Responsive design with hover animations
+
+##### 🔒 **Security Features**
+- HWID generation and validation
+- Multi-device support (up to 3 devices per key)
+- Blacklist system with ban reasons and dates
+- Session timeout and validation
+- Admin functions for key management
+- Feature-based access control
+
+##### 📊 **User Tiers**
+- **Free**: Basic access to combat, movement, and visual modules
+- **Trial**: 1-hour trial with limited features
+- **Premium**: All features + premium modules
+- **Rivals**: Full Rivals support + all premium features
+- **VIP**: Everything + VIP perks and priority support
+- **Admin**: Full system access with management tools
+
+##### ⚙️ **Configuration Options**
+- `REQUIRE_AUTH` - Enable/disable authentication requirement
+- `SKIP_AUTH_FOR_TESTING` - Bypass auth for testing (admin mode)
+- Optional HWID checking
+- Optional whitelist enforcement
+- Configurable session timeout
+- Remote authentication support
 
 ---
 
